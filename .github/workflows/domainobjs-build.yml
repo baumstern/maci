@@ -22,11 +22,11 @@ jobs:
           cache: 'npm'
           
       - run: npm install
-        working-directory: domainobjs
+        working-directory: ./domainobjs
 
       - run: npm run build
-        working-directory: domainobjs
+        working-directory: ./domainobjs
 
       - name: Test
         run: npm run test
-        working-directory: domainobjs
+        working-directory: ./domainobjs

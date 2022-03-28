@@ -33,15 +33,15 @@ jobs:
       #     rm -rf ./.git
           
       - run: |
-          npm ci
-
-      - run: |
           git config --global url."https://github.com/".insteadOf git://github.com/
-          npm run bootstrap
+
+          cd domainobjs
+          npm install
 
       - run: |
+          cd domainobjs
           npm run build
-      
+
       - name: Test
         run: |
           cd domainobjs

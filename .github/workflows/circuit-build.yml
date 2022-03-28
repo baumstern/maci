@@ -15,16 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # To prevent `npm install` failure of circuit package, 
-      # it has to checkout manually because version of `circomlib` has pinned to a specific commit
-      - name: Checkout circomlib
-        run: |
-          git init node_modules/circomlib
-          cd node_modules/circomlib
-          git remote add origin https://github.com/weijiekoh/circomlib
-          git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
-          git checkout --progress --force ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
-          rm -rf ./.git
+      # # To prevent `npm install` failure of circuit package, 
+      # # it has to checkout manually because version of `circomlib` has pinned to a specific commit
+      # - name: Checkout circomlib
+      #   run: |
+      #     git init node_modules/circomlib
+      #     cd node_modules/circomlib
+      #     git remote add origin https://github.com/weijiekoh/circomlib
+      #     git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
+      #     git checkout --progress --force ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
+      #     rm -rf ./.git
 
 
       - name: Use Node.js ${{ matrix.node-version }}

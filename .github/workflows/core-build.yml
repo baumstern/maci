@@ -5,9 +5,6 @@ on:
   pull_request:
     branches: [ v1 ]
 
-env:
-  cwd: ${{github.workspace}}/core
-
 defaults:
   run:
     working-directory: core

@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [ v1 ]
 
+defaults:
+  run:
+    working-directory: domainobjs
+
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -22,11 +26,8 @@ jobs:
           cache: 'npm'
           
       - run: npm install
-        working-directory: ./domainobjs
 
       - run: npm run build
-        working-directory: ./domainobjs
 
       - name: Test
         run: npm run test
-        working-directory: ./domainobjs

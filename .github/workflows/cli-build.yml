@@ -1,12 +1,9 @@
-name: Circuit
+name: CLI
 
 on:
   push:
   pull_request:
     branches: [ v1 ]
-
-env:
-  cwd: ${{github.workspace}}/cli
 
 defaults:
   run:
@@ -27,13 +24,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          
+      - run: pwd
       - run: npm install
-        working-directory: ${{ github.workspace }}
 
       - run: npm run build
-        working-directory: ${{ github.workspace }}
 
       - name: Test
         run: npm run test
-        working-directory: ${{ github.workspace }}

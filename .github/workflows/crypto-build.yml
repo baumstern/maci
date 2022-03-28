@@ -21,7 +21,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           
-      - run: npm install
+      - run: |
+          git config --global url."https://github.com/".insteadOf git://github.com/
+          npm install
         working-directory: crypto
 
       - run: npm run build

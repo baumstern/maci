@@ -1,4 +1,4 @@
-name: Circuit
+name: Crypto
 
 on:
   push:
@@ -29,11 +29,8 @@ jobs:
           cache: 'npm'
           
       - run: npm install
-        working-directory: ${{ github.workspace }}
 
       - run: npm run build
-        working-directory: ${{ github.workspace }}
 
       - name: Test
         run: npm run test
-        working-directory: ${{ github.workspace }}

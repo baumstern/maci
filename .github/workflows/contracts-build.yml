@@ -1,4 +1,4 @@
-name: Circuit
+name: Contracts
 
 on:
   push:
@@ -29,15 +29,11 @@ jobs:
           cache: 'npm'
           
       - run: npm install
-        working-directory: ${{ github.workspace }}
 
       - run: npm run build
-        working-directory: ${{ github.workspace }}
 
       - name: Compile Solidity Code
         run: npm run compileSol
-        working-directory: ${{ github.workspace }}
 
       - name: Test
         run: ./scripts/runTestsInCi.sh
-        working-directory: ${{ github.workspace }}

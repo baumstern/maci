@@ -33,6 +33,7 @@ jobs:
           rm -rf ./.git
           
       - run: |
+          git config --global url."https://github.com/".insteadOf git://github.com/
           npm ci
 
       - run: |

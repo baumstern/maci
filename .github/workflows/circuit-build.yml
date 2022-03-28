@@ -5,10 +5,6 @@ on:
   pull_request:
     branches: [ v1 ]
 
-defaults:
-  run:
-    working-directory: circuit
-
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -38,8 +34,10 @@ jobs:
           cache: 'npm'
           
       - run: npm install
+        working-directory: circuit
 
       - run: npm run build
+        working-directory: circuit
 
       - name: Install circom
         run: |
@@ -53,7 +51,8 @@ jobs:
           cargo install --path circom
           
           mkdir -p ~/.local/bin
-          cp $(which circm) ~/.local/bin
+          cp $(which circom) ~/.local/bin
       
       - name: Test
         run: npm run test
+        working-directory: circuit

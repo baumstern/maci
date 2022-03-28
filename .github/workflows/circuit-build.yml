@@ -1,10 +1,16 @@
-name: Build
+name: Circuit
 
 on:
   push:
-    branches: [ v1 ]
   pull_request:
     branches: [ v1 ]
+
+env:
+  cwd: ${{github.workspace}}/circuit
+
+defaults:
+  run:
+    working-directory: circuit
 
 jobs:
   build:
@@ -20,25 +26,38 @@ jobs:
       # it has to checkout manually because version of `circomlib` has pinned to a specific commit
       - name: Checkout circomlib
         run: |
-          git init circuits/node_modules/circomlib
-          cd circuits/node_modules/circomlib
+          git init node_modules/circomlib
+          cd node_modules/circomlib
           git remote add origin https://github.com/weijiekoh/circomlib
           git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
           git checkout --progress --force ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
           rm -rf ./.git
+        working-directory: ${{ github.workspace }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-
-      - run: |
-          git config --global url."https://github.com/".insteadOf git://github.com/
-          npm ci --no-optional
+          cache: 'npm'
           
-      - run: npm run bootstrap
+      - run: npm install
+        working-directory: ${{ github.workspace }}
 
       - run: npm run build
 
-      - name: Lint
-        run: npm run lint
+      - name: Install circom
+        run: |
+          pwd
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          source $HOME/.cargo/env
+
+          git clone https://github.com/iden3/circom.git
+          cd circom
+          cargo build --release
+          cargo install --path circom
+          
+          mkdir -p ~/.local/bin
+          cp $(which circm) ~/.local/bin
+      
+      - name: Test
+        run: npm run test

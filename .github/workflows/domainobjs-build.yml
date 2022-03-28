@@ -26,8 +26,8 @@ jobs:
           cache: 'npm'
           
       - run: |
-        pwd
-        npm install
+          pwd
+          npm install
 
       - run: |
           pwd

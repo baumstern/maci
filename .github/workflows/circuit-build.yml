@@ -36,10 +36,10 @@ jobs:
       - run: |
           git config --global url."https://github.com/".insteadOf git://github.com/
           npm install
-        working-directory: circuit
+        working-directory: circuits
 
       - run: npm run build
-        working-directory: circuit
+        working-directory: circuits
 
       - name: Install circom
         run: |
@@ -57,4 +57,4 @@ jobs:
       
       - name: Test
         run: npm run test
-        working-directory: circuit
+        working-directory: circuits

@@ -24,6 +24,7 @@ jobs:
       - run: |
           git config --global url."https://github.com/".insteadOf git://github.com/
           npm install
+          npm install -D typescript
         working-directory: crypto
 
       - run: npm run build

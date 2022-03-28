@@ -29,6 +29,6 @@ jobs:
       - run: npm run build
         working-directory: cli
 
-      - name: Test
-        run: npm run test
-        working-directory: cli
+      # - name: Test
+      #   run: npm run test
+      #   working-directory: cli

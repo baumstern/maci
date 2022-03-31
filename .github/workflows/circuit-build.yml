@@ -8,53 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [14, 16]
 
     steps:
-      - uses: actions/checkout@v3
-      
-      # # To prevent `npm install` failure of circuit package, 
-      # # it has to checkout manually because version of `circomlib` has pinned to a specific commit
-      # - name: Checkout circomlib
-      #   run: |
-      #     git init node_modules/circomlib
-      #     cd node_modules/circomlib
-      #     git remote add origin https://github.com/weijiekoh/circomlib
-      #     git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
-      #     git checkout --progress --force ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
-      #     rm -rf ./.git
-
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          
-      - run: |
-          git config --global url."https://github.com/".insteadOf git://github.com/
-          npm install
-        working-directory: circuits
-
-      - run: npm run build
-        working-directory: circuits
-
       - name: Install circom
         run: |
-          pwd
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          source $HOME/.cargo/env
+          wget -O ProcessMessages_10-2-1-2.test.0.zkey https://macitestcircuits.blob.core.windows.net/test/ProcessMessages_10-2-1-2.test.0.zkey
+          wget -O TallyVotes_10-1-2.test.0.zkey https://macitestcircuits.blob.core.windows.net/test/TallyVotes_10-1-2.test.0.zkey
 
-          git clone https://github.com/iden3/circom.git
-          cd circom
-          cargo build --release
-          cargo install --path circom
-          
-          mkdir -p ~/.local/bin
-          cp $(which circom) ~/.local/bin
+          ls -al
       
-      - name: Test
-        run: npm run test
-        working-directory: circuits

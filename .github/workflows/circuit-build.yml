@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Install circom
+      - name: Download zkeys
         run: |
           wget -O ProcessMessages_10-2-1-2.test.0.zkey https://macitestcircuits.blob.core.windows.net/test/ProcessMessages_10-2-1-2.test.0.zkey
           wget -O TallyVotes_10-1-2.test.0.zkey https://macitestcircuits.blob.core.windows.net/test/TallyVotes_10-1-2.test.0.zkey
 
-          ls -al
+          ls -alh
       

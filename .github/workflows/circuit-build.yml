@@ -38,11 +38,11 @@ jobs:
             git
       - name: Bootstrap
         run: |
+          git config --global url."https://github.com/".insteadOf git://github.com/
           npm install
-          npm run bootstrap
+          npx lerna bootstrap --no-ci
       - name: Build
         run: |
-          git config --global url."https://github.com/".insteadOf git://github.com/
           npm run build
         working-directory: circuits
 

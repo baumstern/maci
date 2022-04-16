@@ -40,7 +40,6 @@ jobs:
       - name: Build
         run: |
           git config --global url."https://github.com/".insteadOf git://github.com/
-          npm install --global npm
           npm ci
           npm run build
         working-directory: circuits

@@ -36,14 +36,12 @@ jobs:
             nasm \
             nlohmann-json3-dev \
             git
-      - name: Bootstrap
+
+      - name: Build
         run: |
           git config --global url."https://github.com/".insteadOf git://github.com/
           npm install --global npm
           npm install
-          npx lerna bootstrap --no-ci
-      - name: Build
-        run: |
           npm run build
         working-directory: circuits
 

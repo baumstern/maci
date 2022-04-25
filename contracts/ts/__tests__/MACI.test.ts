@@ -51,6 +51,17 @@ const testTallyVk = new VerifyingKey(
     ],
 )
 
+const testSubsidyVk = new VerifyingKey(
+    new G1Point(BigInt(0), BigInt(1)),
+    new G2Point([BigInt(2), BigInt(3)], [BigInt(4), BigInt(5)]),
+    new G2Point([BigInt(6), BigInt(7)], [BigInt(8), BigInt(9)]),
+    new G2Point([BigInt(10), BigInt(11)], [BigInt(12), BigInt(13)]),
+    [
+        new G1Point(BigInt(14), BigInt(15)),
+        new G1Point(BigInt(16), BigInt(17)),
+    ],
+)
+
 const compareVks = (vk: VerifyingKey, vkOnChain: any) => {
     expect(vk.ic.length).toEqual(vkOnChain.ic.length)
     for (let i = 0; i < vk.ic.length; i ++) {
@@ -100,6 +111,7 @@ const treeDepths: TreeDepths = {
 
 const messageBatchSize = 25
 const tallyBatchSize = STATE_TREE_ARITY ** treeDepths.intStateTreeDepth
+const subsidyBatchSize = STATE_TREE_ARITY ** treeDepths.intStateTreeDepth 
 
 const initialVoiceCreditBalance = 100
 let signer
@@ -287,7 +299,6 @@ describe('MACI', () => {
                 BigInt(deployTime + duration),
                 maxValues,
                 treeDepths,
-                messageBatchSize,
                 coordinator,
             )
             expect(p.toString()).toEqual(pollId.toString())
@@ -333,6 +344,7 @@ describe('MACI', () => {
             const onChainBatchSizes = await pollContract.batchSizes()
             expect(Number(onChainBatchSizes.messageBatchSize)).toEqual(messageBatchSize)
             expect(Number(onChainBatchSizes.tallyBatchSize)).toEqual(tallyBatchSize)
+            expect(Number(onChainBatchSizes.subsidyBatchSize)).toEqual(subsidyBatchSize)
         })
     })
 

@@ -1,0 +1,37 @@
+name: NPM Publish 
+
+on:
+  push: 
+    # branches: [ v1 ]
+
+
+jobs:
+
+  e2e:
+    uses: ./.github/workflows/e2e.yml
+
+# TODO: add package testing
+
+
+  publish:
+    needs: e2e
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Setup NPM
+        run: |
+          npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+
+      - name: npm install
+        run: npm install
+          
+      - name: NPM Publish
+        run: npx lerna publish from-package --yes
+          

@@ -1,8 +1,7 @@
 name: E2E
 
 on:
-  push: 
-    branches: [ v1 ]
+  workflow_call:
   pull_request:
     branches: [ v1 ]
 

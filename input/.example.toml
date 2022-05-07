@@ -4,5 +4,6 @@ title = "Development network example"
 MACI_address="0xfd310A97c0677ddDA52aA707E5A0331b4a20dB96"
 poll_id=0
 
+
 [network]
 rpc_endpoint="http://3.236.12.62:8545"

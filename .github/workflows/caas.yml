@@ -47,11 +47,11 @@ jobs:
           eval `./setEnv.js`
 
 
-          npx maci-cli mergeMessages --contract "$MACI_ADDRESS" --poll-id 0
+          npx qaci-cli mergeMessages --contract "$MACI_ADDRESS" --poll-id "$POLL_ID"
 
-          npx maci-cli mergeSignups -x "$MACI_ADDRESS" -o "$POLL_ID"
+          npx qaci-cli mergeSignups -x "$MACI_ADDRESS" -o "$POLL_ID"
 
-          npx maci-cli genProofs -x "$MACI_ADDRESS" \
+          npx qaci-cli genProofs -x "$MACI_ADDRESS" \
               -sk macisk."$COORDINATOR_PRIVATE_KEY" \
               -o "$POLL_ID" \
               -r ~/rapidsnark/build/prover \

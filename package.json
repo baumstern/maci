@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "@ltd/j-toml" :"^1.30.0",
-    "maci-cli": "^1.0.4"
+    "qaci-cli": "^1.0.4"
   }
 }

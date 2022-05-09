@@ -2,8 +2,8 @@ name: Coordinator Service
 
 on:
   push: 
-    paths:
-      - 'input/**.toml'
+    # paths:
+    #   - 'input/**.toml'
 
 concurrency: 
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -11,7 +11,9 @@ concurrency:
 
 env:
   COORDINATOR_PRIVATE_KEY: ${{ secrets.COORDINATOR_PRIVATE_KEY }}
-  ETH_SK: ${{ secrets.ETH_SK }}
+  ETH_PRIVATE_KEY: ${{ secrets.ETH_SK }}
+  ALCHEMY_GOERLI_API_KEY: ${{ secrets.ALCHEMY_GOERLI_API_KEY }}
+  ALCHEMY_ARBITRUM_RINKEBY_API_KEY: ${{ secrets.ALCHEMY_ARBITRUM_RINKEBY_API_KEY }}
 
 
 jobs:
@@ -22,56 +24,31 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Checkout MACI repo
+        uses: actions/checkout@v3
+        with:
+          repository: appliedzkp/maci
+          ref: v1
+          path: maci
+
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: Initialize Project
-        run: npm install
-
-      - name: Download rapidsnark (1c137)
-        run: |
-          mkdir -p ~/rapidsnark/build
-          wget -O ~/rapidsnark/build/prover https://maci-devops-zkeys.s3.ap-northeast-2.amazonaws.com/rapidsnark-linux-amd64-1c137
-          chmod +x ~/rapidsnark/build/prover
-
-      - name: Download zkeys
-        run: |
-          wget -qO zkeys.tar.gz https://maci-devops.s3.ap-northeast-2.amazonaws.com/zkeys_glibc-211.tar.gz
-          tar -xzvf zkeys.tar.gz
+      - run: npm install
+        
+      - name: Install MACI
+        run: ./scripts/install_maci.sh
 
       - name: Generate Proofs
-        run: |
-
-          eval `./setEnv.js`
-
-
-          npx qaci-cli mergeMessages --contract "$MACI_ADDRESS" --poll-id "$POLL_ID"
-
-          npx qaci-cli mergeSignups -x "$MACI_ADDRESS" -o "$POLL_ID"
-
-          npx qaci-cli genProofs -x "$MACI_ADDRESS" \
-              -sk macisk."$COORDINATOR_PRIVATE_KEY" \
-              -o "$POLL_ID" \
-              -r ~/rapidsnark/build/prover \
-              -wp ./zkeys/ProcessMessages_10-2-1-2_test \
-              -wt ./zkeys/TallyVotes_10-1-2_test \
-              -zp ./zkeys/ProcessMessages_10-2-1-2_test.0.zkey \
-              -zt ./zkeys/TallyVotes_10-1-2_test.0.zkey \
-              -t tally.json \
-              -f proofs/
-
-          ls proofs
-
-          cat tally.json
+        run: ./scripts/generate_proofs.sh
             
-
       - name: Tar files
-        run: tar -cvzf proofs.tar.gz proofs tally.json
+        run: cd maci/cli && tar -cvzf proofs.tar.gz proofs tally.json
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: proofs
-          path: proofs.tar.gz
+          path: maci/cli/proofs.tar.gz

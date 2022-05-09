@@ -8,7 +8,7 @@ const config = {
   defaultNetwork: 'dev',
   networks: {
     dev: {
-      url: process.env.ETH_RPC_ENDPOINT,
+      url: process.env.ETH_RPC_ENDPOINT || "",
       accounts: [process.env.ETH_PRIVATE_KEY],
     },
     goerli: {

@@ -7,8 +7,8 @@ set -e
 export HARDHAT_NETWORK=goerli
 export ETH_SK=0x56ab0fb24e1e5ae1064cea5a1f03ee83f639ce5755604af6bbb2cd34ec7a50ce
 
-MACI_ADDRESS=0xfd310A97c0677ddDA52aA707E5A0331b4a20dB96
-VK_REGISTRY_ADDRESS=0xBeB45D885838f9A55cBFa77c3D0DEF47915fFcfA
+MACI_ADDRESS=0x0Abd9C6D640f27FbaD4ae4aE39F087f98a11703F
+VK_REGISTRY_ADDRESS=0x93014E51e60Dabb766D4D53D389414900Aea9007
 
 node build/index.js deployVkRegistry
 
@@ -23,7 +23,7 @@ node build/index.js create \
 
 node ./build/index.js deployPoll --maci-address "$MACI_ADDRESS" \
     --pubkey macipk.c974f4f168b79727ac98bfd53a65ea0b4e45dc2552fe73df9f8b51ebb0930330 \
-    --duration 20 --max-messages 25 --max-vote-options 25 --int-state-tree-depth 1 --msg-tree-depth 2 --msg_batch_depth 1 --vote-option-tree-depth 2
+    --duration 100 --max-messages 25 --max-vote-options 25 --int-state-tree-depth 1 --msg-tree-depth 2 --msg_batch_depth 1 --vote-option-tree-depth 2
 
 node ./build/index.js signup \
     --pubkey macipk.3e7bb2d7f0a1b7e980f1b6f363d1e3b7a12b9ae354c2cd60a9cfa9fd12917391 \

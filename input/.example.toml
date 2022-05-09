@@ -19,7 +19,7 @@ poll_id=0
 
 
 [network]
-# network="goerli"
+network="arbitrum_rinkeby"
 
 # set only if custom
-rpc_endpoint="http://3.236.12.62:8545"
+# rpc_endpoint="http://3.236.12.62:8545"

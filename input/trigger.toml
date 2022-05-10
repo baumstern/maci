@@ -7,8 +7,10 @@ network="arbitrum_rinkeby"
 # rpc_endpoint="http://3.236.12.62:8545"
 
 [poll]
-MACI_address="0x0Abd9C6D640f27FbaD4ae4aE39F087f98a11703F"
+MACI_address="0xB613d45E1E6b8FcaF2E4911cE7C6a12FF74D4e0A"
+poll_processor_and_tallyer_address="0x9DBD34D116A8290BdD0F140B76Fb57eD06237C41"
 poll_id=0
+
 
 
 # [MACI]

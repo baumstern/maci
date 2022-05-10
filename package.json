@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "proveOnchain": "bash scripts/prove_onchain.sh"
+  },
   "dependencies": {
     "@ltd/j-toml": "^1.30.0"
   }

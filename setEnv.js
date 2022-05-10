@@ -4,7 +4,7 @@ const TOML = require('@ltd/j-toml')
 
 const { readFile } =require('node:fs')
 
- readFile('input/.example.toml', (err, data) => {
+ readFile('input/trigger.toml', (err, data) => {
     if (err) throw err
     const config = data.toString()
     const rootTable = TOML.parse(config)

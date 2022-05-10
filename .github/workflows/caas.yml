@@ -2,8 +2,8 @@ name: Coordinator Service
 
 on:
   push: 
-    # paths:
-    #   - 'input/**.toml'
+    paths:
+      - 'input/trigger.toml'
 
 concurrency: 
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}

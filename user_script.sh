@@ -4,7 +4,7 @@
 
 set -e
 
-export HARDHAT_NETWORK=goerli
+export HARDHAT_NETWORK=rinkarby
 export ETH_SK=0x56ab0fb24e1e5ae1064cea5a1f03ee83f639ce5755604af6bbb2cd34ec7a50ce
 
 MACI_ADDRESS=0x0Abd9C6D640f27FbaD4ae4aE39F087f98a11703F

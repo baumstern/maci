@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "prepare:proveOnchain": "bash scripts/install_maci.sh",
     "proveOnchain": "bash scripts/prove_onchain.sh"
   },
   "dependencies": {

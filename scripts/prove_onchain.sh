@@ -7,9 +7,6 @@ MACI_DIR="$PROJECT_ROOT"/maci
 
 eval `"$PROJECT_ROOT"/setEnv.js`
 
-# Overwrite hardhat config to enable network and eth private key config
-cp "$PROJECT_ROOT"/config/hardhat.config.js "$MACI_DIR"/cli/
-
 cd "$MACI_DIR"/cli
 node build/index.js proveOnChain \
     --contract "$MACI_ADDRESS" \

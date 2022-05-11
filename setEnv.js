@@ -11,6 +11,7 @@ const { readFile } =require('node:fs')
 
     
     console.log('export MACI_ADDRESS='+rootTable.poll.MACI_address)
+    console.log('export POLL_PROCESSOR_AND_TALLYER_ADDRESS='+rootTable.poll.poll_processor_and_tallyer_address)
     console.log('export POLL_ID='+rootTable.poll.poll_id)
 
     console.log('export HARDHAT_NETWORK='+rootTable.network.network)

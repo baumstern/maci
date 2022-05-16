@@ -4,6 +4,7 @@ BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
 PROJECT_ROOT="$BASE_DIR"/..
 MACI_DIR="$PROJECT_ROOT"/maci
 
+eval `"$PROJECT_ROOT"/setEnv.js`
 
 git config --global url."https://github.com/".insteadOf git://github.com/
 
@@ -26,7 +27,7 @@ npm run build
 
 # Compile contracts
 cd "$MACI_DIR"/contracts
-npm run compileSol
+HARDHAT_NETWORK=hardhat npm run compileSol
 
 
 RAPIDSNARK_LINK=https://maci-devops-zkeys.s3.ap-northeast-2.amazonaws.com/rapidsnark-linux-amd64-1c137
@@ -40,18 +41,28 @@ wget -qO "$RAPIDSNARK_PATH"/prover "$RAPIDSNARK_LINK"
 chmod +x "$RAPIDSNARK_PATH"/prover
 
 
-ZKEYS_LINK=https://maci-devops.s3.ap-northeast-2.amazonaws.com/zkeys_glibc-211.tar.gz
-ZKEYS_FILE_NAME=zkeys.tar.gz
-ZKEYS_PARAMS='10-2-1-2'
+# Download .zkey files
 ZKEYS_GLIBC='2.11'
+ZKEY_COMPILED=zkeys_"$ZKEYS_PARAMS"_glibc-211.tar.gz
 
-echo 'Download zkeys. params: "$ZKEYS_PARAMS", GLIBC version: "$ZKEYS_GLIBC"'
-# Download zkeys (development parameter)
-# stateTreeDepth: 10
-# msgTreeDepth: 2
-# msgBatchDepth: 1
-# voteOptionTreeDepth: 2
-#
+# $ZKEY_PARAMS should be declared in `input/*.toml` config and exported by `setEnv.js` scropt
+STATE_TREE_DEPTH=$(echo "$ZKEYS_PARAMS" | cut -d '-' -f 1)
+INT_STATE_TREE_DEPTH=$(echo "$ZKEYS_PARAMS" | cut -d '-' -f 3)
+VOTE_OPTION_TREE_DEPTH=$(echo "$ZKEYS_PARAMS" | cut -d '-' -f 4)
+
+TALLY_PARAMS=""$STATE_TREE_DEPTH"-"$INT_STATE_TREE_DEPTH"-"$VOTE_OPTION_TREE_DEPTH""
+
+ZKEY_COMPILED_LINK=https://maci-devops-zkeys.s3.ap-northeast-2.amazonaws.com/"$ZKEY_COMPILED"
+ZKEY_PROCESS_MESSAGES_LINK=https://maci-devops-zkeys.s3.ap-northeast-2.amazonaws.com/ProcessMessages_"$ZKEYS_PARAMS"_test.0.zkey
+ZKEY_TALLY_VOTES_LINK=https://maci-devops-zkeys.s3.ap-northeast-2.amazonaws.com/TallyVotes_"$TALLY_PARAMS"_test.0.zkey
+
+
+echo "Download zkeys. params: "$ZKEYS_PARAMS", GLIBC version: "$ZKEYS_GLIBC""
+
 cd "$MACI_DIR"/cli
-wget -qO "$ZKEYS_FILE_NAME" "$ZKEYS_LINK"
-tar -xzvf "$ZKEYS_FILE_NAME"
+wget -q "$ZKEY_COMPILED_LINK"
+tar -xzvf "$ZKEY_COMPILED"
+
+cd zkeys
+wget -q "$ZKEY_PROCESS_MESSAGES_LINK"
+wget -q "$ZKEY_TALLY_VOTES_LINK"

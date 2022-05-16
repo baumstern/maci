@@ -10,7 +10,7 @@ network="arbitrum_rinkeby"
 MACI_address="0xAAf9873558f18a09De055fD16602Aa1e9EB3F6e8"
 poll_processor_and_tallyer_address="0x887b8c132A4fE2Ed18e7e8718d2cAA4dE526BE3f"
 poll_id=0
-
+zkey_params="10-2-1-2"
 
 
 # [MACI]

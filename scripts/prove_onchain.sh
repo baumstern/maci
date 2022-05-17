@@ -7,6 +7,8 @@ MACI_DIR="$PROJECT_ROOT"/maci
 
 eval `"$PROJECT_ROOT"/setEnv.js`
 
+cp config/hardhat.config.js "$MACI_DIR"/cli/
+
 cd "$MACI_DIR"/cli
 node build/index.js proveOnChain \
     --contract "$MACI_ADDRESS" \

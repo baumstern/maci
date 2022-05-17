@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: appliedzkp/maci
-          ref: v1
+          ref: a069145cc339c92689c3c2793c70b1b93f208572
           path: maci
 
       - name: Use Node.js 16

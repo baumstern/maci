@@ -1,0 +1,25 @@
+{
+    "name": "debug",
+    "version": "0.9.4",
+    "description": "",
+    "main": "build/index.js",
+    "bin": {
+        "maci-cli": "./build/index.js"
+    },
+    "scripts": {
+        "watch": "tsc --watch",
+        "build": "tsc",
+        "test": "jest",
+        "test-debug": "node --inspect-brk ./node_modules/.bin/jest"
+    },
+    "dependencies": {
+        "ethers": "^4.0.45",
+        "maci-contracts": "^0.9.1",
+        "maci-core": "^0.9.1",
+        "maci-domainobjs": "^0.9.1"
+    },
+    "devDependencies": {
+        "@types/node": "^13.1.2"
+    },
+    "gitHead": "081845366eb65fffbfa7e60aca3cb69347de488e"
+}

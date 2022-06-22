@@ -4,7 +4,7 @@ import {
     PubKey,
     PrivKey,
     Keypair,
-    Command,
+    PCommand,
 } from 'maci-domainobjs'
 
 import {
@@ -71,7 +71,7 @@ const executeSuite = async (data: any, expect: any) => {
     const createOutput = exec(createCommand).stdout.trim()
     console.log(createOutput)
 
-    const regMatch = createOutput.match(/(0x[a-fA-F0-9]{40})/)
+    const regMatch = createOutput.match(/MACI: (0x[a-fA-F0-9]{40})/)
     const maciAddress = regMatch[1]
 
     const deployPoll = `node build/index.js deployPoll` +
@@ -200,7 +200,7 @@ const executeSuite = async (data: any, expect: any) => {
             const encPrivKey = PrivKey.unserialize(publishRegMatch[2])
             const encPubKey = new PubKey(genPubKey(encPrivKey.rawPrivKey))
 
-            const command = new Command(
+            const command = new PCommand(
                 BigInt(stateIndex),
                 userKeypair.pubKey,
                 BigInt(voteOptionIndex),

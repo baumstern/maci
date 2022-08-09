@@ -1,4 +1,4 @@
-name: E2E
+name: E2E (build, test, deploy, integration)
 
 on:
   push: 
@@ -55,12 +55,13 @@ jobs:
       - name: Publish Project
         run: |
         # lerna publish? or npm publish?
+        tar -czvf maci-core.tar.gz core/
 
       - name: Upload artifact to GitHub  
         uses: actions/upload-artifact@v3
         with:
           name: maci-core
-          path: core/
+          path: maci-core.tar.gz
           
 
 

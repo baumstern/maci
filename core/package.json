@@ -1,5 +1,5 @@
 {
-    "name": "maci-core",
+    "name": "gaci-core",
     "version": "1.1.0",
     "description": "",
     "main": "build/index.js",
@@ -17,8 +17,8 @@
         "@maci-contracts": "../contracts"
     },
     "dependencies": {
-        "maci-crypto": "^1.1.0",
-        "maci-domainobjs": "^1.1.0",
+        "gaci-crypto": "^1.1.0",
+        "gaci-domainobjs": "^1.1.0",
         "module-alias": "^2.2.2"
     },
     "devDependencies": {

@@ -55,7 +55,7 @@ jobs:
       - name: Publish Project
         run: |
         # lerna publish? or npm publish?
-        tar -czvf maci-core.tar.gz core/
+          tar -czvf maci-core.tar.gz core/
 
       - name: Upload artifact to GitHub  
         uses: actions/upload-artifact@v3

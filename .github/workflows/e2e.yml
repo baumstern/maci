@@ -51,11 +51,11 @@ jobs:
           npm install
           npx lerna bootstrap --no-ci
           npm run build
+          tar -czvf maci-core.tar.gz core/
 
       - name: Publish Project
         run: |
         # lerna publish? or npm publish?
-          tar -czvf maci-core.tar.gz core/
 
       - name: Upload artifact to GitHub  
         uses: actions/upload-artifact@v3

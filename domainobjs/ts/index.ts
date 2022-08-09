@@ -25,7 +25,7 @@ import {
     unpackPubKey,
     IncrementalQuinTree,
     SNARK_FIELD_SIZE,
-} from 'maci-crypto'
+} from 'gaci-crypto'
 
 const SERIALIZED_PRIV_KEY_PREFIX = 'macisk.'
 

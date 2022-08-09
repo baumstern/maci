@@ -1,18 +1,18 @@
 import {
     parseArtifact,
     getDefaultSigner,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
 import {
     PubKey,
     PrivKey,
     Keypair,
     PCommand,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 import {
     genRandomSalt,
-} from 'maci-crypto'
+} from 'gaci-crypto'
 
 import {
     promptPwd,
@@ -24,7 +24,7 @@ import {
     batchTransactionRequests,
 } from './utils'
 
-import {readJSONFile} from 'maci-common'
+import {readJSONFile} from 'gaci-common'
 import {contractFilepath} from './config'
 
 import {
@@ -61,7 +61,7 @@ const configureSubparser = (subparsers: any) => {
     const maciPrivkeyGroup = parser.addMutuallyExclusiveGroup({ required: true })
 
     maciPrivkeyGroup.addArgument(
-        ['-dsk', '--prompt-for-maci-privkey'],
+        ['-dsk', '--prompt-for-gaci-privkey'],
         {
             action: 'storeTrue',
             help: 'Whether to prompt for your serialized MACI private key',

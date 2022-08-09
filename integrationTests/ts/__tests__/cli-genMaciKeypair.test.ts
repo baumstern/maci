@@ -1,11 +1,11 @@
 import {
     PubKey,
     PrivKey,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 import {
     genPubKey,
-} from 'maci-crypto'
+} from 'gaci-crypto'
 
 import { exec } from './utils'
 

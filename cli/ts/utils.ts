@@ -4,11 +4,11 @@ import * as prompt from 'prompt-async'
 prompt.colors = false
 prompt.message = ''
 
-import { SNARK_FIELD_SIZE } from 'maci-crypto'
+import { SNARK_FIELD_SIZE } from 'gaci-crypto'
 
 import {
     genJsonRpcDeployer,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
 const Web3 = require('web3')
 const { ethers } = require('hardhat')

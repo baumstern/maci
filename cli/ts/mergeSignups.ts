@@ -1,14 +1,14 @@
 import {
     parseArtifact,
     getDefaultSigner,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
 import {
     validateEthAddress,
     contractExists,
     currentBlockTimestamp,
 } from './utils'
-import {readJSONFile} from 'maci-common'
+import {readJSONFile} from 'gaci-common'
 
 import * as ethers from 'ethers'
 

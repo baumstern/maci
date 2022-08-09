@@ -7,7 +7,7 @@ import {
 import { 
     genRandomSalt,
     stringifyBigInts,
-} from 'maci-crypto'
+} from 'gaci-crypto'
 
 
 describe('UnpackElement circuit', () => {

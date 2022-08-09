@@ -7,21 +7,21 @@ import {
 import {
     MaciState,
     STATE_TREE_DEPTH,
-} from 'maci-core'
+} from 'gaci-core'
 
 import {
     Keypair,
     PCommand,
     Message,
     VerifyingKey,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 import {
     hash5,
     G1Point,
     G2Point,
     IncrementalQuinTree,
-} from 'maci-crypto'
+} from 'gaci-crypto'
 
 const voiceCreditBalance = BigInt(100)
 

@@ -4,9 +4,9 @@ import {
     deployMaci,
     deployVerifier,
     deployTopupCredit as deployTopupCreditContract,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
-import {readJSONFile, writeJSONFile} from 'maci-common'
+import {readJSONFile, writeJSONFile} from 'gaci-common'
 import {contractFilepath} from './config'
 
 import {

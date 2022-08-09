@@ -3,13 +3,13 @@ import * as ethers from 'ethers'
 import * as shelljs from 'shelljs'
 import * as path from 'path'
 
-import { extractVk } from 'maci-circuits'
-import { VerifyingKey } from 'maci-domainobjs'
-import { genProcessVkSig, genTallyVkSig, genSubsidyVkSig } from 'maci-core'
-import { parseArtifact, getDefaultSigner } from 'maci-contracts'
+import { extractVk } from 'gaci-circuits'
+import { VerifyingKey } from 'gaci-domainobjs'
+import { genProcessVkSig, genTallyVkSig, genSubsidyVkSig } from 'gaci-core'
+import { parseArtifact, getDefaultSigner } from 'gaci-contracts'
 import { contractExists } from './utils'
 import { contractFilepath } from './config'
-import { readJSONFile } from 'maci-common'
+import { readJSONFile } from 'gaci-common'
 
 const configureSubparser = (subparsers: any) => {
     const createParser = subparsers.addParser(

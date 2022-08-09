@@ -6,7 +6,7 @@ import {
 
 import { 
     stringifyBigInts,
-} from 'maci-crypto'
+} from 'gaci-crypto'
 
 describe('Splice circuit', () => {
     const circuit  = 'splicer_test'

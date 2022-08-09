@@ -3,12 +3,12 @@ import {
     stringifyBigInts,
     verifySignature,
     hash4,
-} from 'maci-crypto'
+} from 'gaci-crypto'
 
 import {
     Keypair,
     PCommand,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 import { 
     genWitness,

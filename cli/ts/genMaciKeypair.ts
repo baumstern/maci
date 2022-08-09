@@ -1,6 +1,6 @@
 import {
     Keypair,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 const configureSubparser = (subparsers: any) => {
     subparsers.addParser(

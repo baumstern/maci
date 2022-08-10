@@ -20,5 +20,7 @@
       },
       "devDependencies": {
             "@types/node": "^16.11.6"
-      }
+      },
+      "private": true,
+      "gitHead": "e66978c1c7de7884d0331c688fe3a5e9b80d516f"
 }

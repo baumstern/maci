@@ -22,6 +22,7 @@ const genProof = (
     const tmpObj = tmp.dirSync()
     const tmpDirPath = tmpObj.name
 
+    
     const inputJsonPath = path.join(tmpDirPath, 'input.json')
     const outputWtnsPath = path.join(tmpDirPath, 'output.wtns')
     const proofJsonPath = path.join(tmpDirPath, 'proof.json')

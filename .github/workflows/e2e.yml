@@ -38,6 +38,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       # To prevent `npm install` failure of circuit package, 
       # it has to checkout manually because version of `circomlib` has pinned to a specific commit

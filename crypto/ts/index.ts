@@ -291,6 +291,7 @@ const packPubKey = (pubKey: PubKey): Buffer => {
     return babyJub.packPoint(pubKey)
 }
 
+
 /*
  * Restores the original PubKey from its packed representation
  * @param packed The value to unpack

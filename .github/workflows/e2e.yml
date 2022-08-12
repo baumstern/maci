@@ -60,7 +60,7 @@ jobs:
 
       - name: Publish Project
         run: |
-          lerna publish --canary --preid next --yes
+          lerna publish --canary --preid next --loglevel verbose --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

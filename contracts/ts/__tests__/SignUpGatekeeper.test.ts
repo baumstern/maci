@@ -4,7 +4,7 @@ import { getDefaultSigner, deploySignupToken, deploySignupTokenGatekeeper, deplo
 import { deployTestContracts } from '../utils'
 import {
     Keypair,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 const initialVoiceCreditBalance = 100
 

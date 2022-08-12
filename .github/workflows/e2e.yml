@@ -1,4 +1,4 @@
-name: E2E
+name: E2E (build, test, deploy, integration)
 
 on:
   push: 
@@ -48,19 +48,17 @@ jobs:
       - name: Initialize Project
         run: |
           git config --global url."https://github.com/".insteadOf git://github.com/
-          npm install
-          npx lerna bootstrap --no-ci
-          npm run build
+          # npm install
+          # npx lerna bootstrap --no-ci
+          # npm run build
 
       - name: Publish Project
         run: |
-        # lerna publish? or npm publish?
+          lerna publish --canary --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Upload artifact to GitHub  
-        uses: actions/upload-artifact@v3
-        with:
-          name: maci-core
-          path: core/
+      
           
 
 

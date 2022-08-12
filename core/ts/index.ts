@@ -10,6 +10,7 @@ import {
     genSubsidyVkSig
 } from './MaciState'
 
+
 export {
     //genPerVOSpentVoiceCreditsCommitment,
     //genSpentVoiceCreditsCommitment,

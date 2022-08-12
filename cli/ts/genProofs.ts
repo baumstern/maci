@@ -2,16 +2,16 @@ import * as ethers from 'ethers'
 import * as fs from 'fs'
 import * as path from 'path'
 
-import { genProof, verifyProof, extractVk } from 'maci-circuits'
-import { hashLeftRight, hash3 } from 'maci-crypto'
-import { PrivKey, Keypair, VerifyingKey } from 'maci-domainobjs'
-import { genTallyResultCommitment } from 'maci-core'
+import { genProof, verifyProof, extractVk } from 'gaci-circuits'
+import { hashLeftRight, hash3 } from 'gaci-crypto'
+import { PrivKey, Keypair, VerifyingKey } from 'gaci-domainobjs'
+import { genTallyResultCommitment } from 'gaci-core'
 
 import {
     parseArtifact,
     getDefaultSigner,
     genMaciStateFromContract,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
 import {
     promptPwd,
@@ -19,7 +19,7 @@ import {
     contractExists,
     isPathExist,
 } from './utils'
-import {readJSONFile} from 'maci-common'
+import {readJSONFile} from 'gaci-common'
 import {contractFilepath} from './config'
 
 const configureSubparser = (subparsers: any) => {
@@ -31,7 +31,7 @@ const configureSubparser = (subparsers: any) => {
     const maciPrivkeyGroup = parser.addMutuallyExclusiveGroup({ required: true })
 
     maciPrivkeyGroup.addArgument(
-        ['-dsk', '--prompt-for-maci-privkey'],
+        ['-dsk', '--prompt-for-gaci-privkey'],
         {
             action: 'storeTrue',
             help: 'Whether to prompt for your serialized MACI private key',

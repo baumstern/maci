@@ -2,12 +2,12 @@
 //const { ethers } = require('hardhat')
 
 import * as fs from 'fs'
-import {writeJSONFile} from 'maci-common'
+import {writeJSONFile} from 'gaci-common'
 import {contractFilepath, contractFilepathOld} from './config'
 
 import {
     deployVkRegistry as deployVkRegistryContract,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
 const configureSubparser = (subparsers: any) => {
     subparsers.addParser(

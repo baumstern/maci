@@ -1,7 +1,7 @@
 jest.setTimeout(90000)
 import { deployVerifier } from '../'
-import { G1Point, G2Point } from 'maci-crypto'
-import { VerifyingKey } from 'maci-domainobjs'
+import { G1Point, G2Point } from 'gaci-crypto'
+import { VerifyingKey } from 'gaci-domainobjs'
 
 const vk = new VerifyingKey(
     new G1Point(

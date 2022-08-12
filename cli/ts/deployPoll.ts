@@ -4,14 +4,14 @@ import {
     deployVerifier,
     deployPpt,
     getDefaultSigner,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
 import {
     PubKey,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 import {contractExists} from './utils'
-import {readJSONFile, writeJSONFile} from 'maci-common'
+import {readJSONFile, writeJSONFile} from 'gaci-common'
 import {contractFilepath} from './config'
 
 const configureSubparser = (subparsers: any) => {
@@ -21,7 +21,7 @@ const configureSubparser = (subparsers: any) => {
     )
 
     createParser.addArgument(
-        ['-x', '--maci-address'],
+        ['-x', '--gaci-address'],
         {
             action: 'store',
             type: 'string',

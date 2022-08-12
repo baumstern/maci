@@ -1,9 +1,9 @@
 jest.setTimeout(90000)
 import {
     Keypair,
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
-import { stringifyBigInts } from 'maci-crypto'
+import { stringifyBigInts } from 'gaci-crypto'
 
 import { 
     genWitness,

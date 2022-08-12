@@ -1,7 +1,7 @@
 import {
     Keypair,
     PrivKey
-} from 'maci-domainobjs'
+} from 'gaci-domainobjs'
 
 export interface Vote {
     voteOptionIndex: number;

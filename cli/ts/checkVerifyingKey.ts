@@ -13,12 +13,12 @@ import {
 import {
     getDefaultSigner,
     parseArtifact,
-} from 'maci-contracts'
+} from 'gaci-contracts'
 
 
-import { extractVk } from 'maci-circuits'
-import { readJSONFile } from 'maci-common'
-import { VerifyingKey } from 'maci-domainobjs'
+import { extractVk } from 'gaci-circuits'
+import { readJSONFile } from 'gaci-common'
+import { VerifyingKey } from 'gaci-domainobjs'
 
 import {contractFilepath} from './config'
 

@@ -3,7 +3,7 @@ import * as path from 'path'
 import * as shelljs from 'shelljs'
 import * as tmp from 'tmp'
 
-import { stringifyBigInts } from 'maci-crypto'
+import { stringifyBigInts } from 'gaci-crypto'
 
 const snarkjsPath = path.join(
     __dirname,
@@ -22,6 +22,7 @@ const genProof = (
     const tmpObj = tmp.dirSync()
     const tmpDirPath = tmpObj.name
 
+    
     const inputJsonPath = path.join(tmpDirPath, 'input.json')
     const outputWtnsPath = path.join(tmpDirPath, 'output.wtns')
     const proofJsonPath = path.join(tmpDirPath, 'proof.json')

@@ -1,6 +1,6 @@
 {
     "name": "maci-integrationtests",
-    "version": "1.1.1-alpha.1",
+    "version": "1.1.1-alpha.2",
     "description": "",
     "main": "build/index.js",
     "scripts": {
@@ -24,10 +24,10 @@
         "@types/jest": "^26.0.21",
         "@types/node": "^14.14.35",
         "ethers": "^5.0.32",
-        "gaci-circuits": "^1.1.1-alpha.1",
-        "gaci-cli": "^1.1.1-alpha.1",
-        "gaci-contracts": "^1.1.1-alpha.1",
-        "gaci-core": "^1.1.1-alpha.1",
+        "gaci-circuits": "^1.1.1-alpha.2",
+        "gaci-cli": "^1.1.1-alpha.2",
+        "gaci-contracts": "^1.1.1-alpha.2",
+        "gaci-core": "^1.1.1-alpha.2",
         "gaci-crypto": "^1.1.1-alpha.0",
         "gaci-domainobjs": "^1.1.1-alpha.0",
         "hardhat": "^2.0.11",

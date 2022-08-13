@@ -1,6 +1,6 @@
 {
     "name": "gaci-contracts",
-    "version": "1.1.1-alpha.0",
+    "version": "1.1.1-alpha.1",
     "description": "",
     "main": "build/index.js",
     "scripts": {
@@ -41,8 +41,8 @@
         "@types/jest": "^26.0.21",
         "@types/node": "^14.14.35",
         "ethers": "^5.0.32",
-        "gaci-circuits": "^1.1.1-alpha.0",
-        "gaci-core": "^1.1.1-alpha.0",
+        "gaci-circuits": "^1.1.1-alpha.1",
+        "gaci-core": "^1.1.1-alpha.1",
         "gaci-crypto": "^1.1.1-alpha.0",
         "gaci-domainobjs": "^1.1.1-alpha.0",
         "jest": "^26.6.3",

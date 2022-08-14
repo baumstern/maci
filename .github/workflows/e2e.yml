@@ -51,16 +51,19 @@ jobs:
           git checkout --progress --force ac85e82c1914d47789e2032fb11ceb2cfdd38a2b
           rm -rf ./.git
 
+
       - name: Initialize Project
         run: |
           git config --global url."https://github.com/".insteadOf git://github.com/
-          # npm install
-          # npx lerna bootstrap --no-ci
-          # npm run build
+          npm install
+          npx lerna bootstrap --no-ci
+          npm run build
+          git diff HEAD *
+
 
       - name: Publish Project
-        run: |
-          lerna publish --canary --preid next --yes
+        run: |          
+          lerna publish --canary --preid ci.$(git rev-parse --short HEAD) --dist-tag ci --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

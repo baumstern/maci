@@ -39,5 +39,6 @@
         "shelljs": "^0.8.3",
         "ts-jest": "^26.5.4"
     },
+    "private": true,
     "gitHead": "f567a17293114ba2d5e89c711d00a9f4c197f070"
 }

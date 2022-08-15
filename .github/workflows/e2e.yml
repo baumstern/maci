@@ -60,12 +60,16 @@ jobs:
           npm run build
           git diff HEAD *
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: "**/package-lock.json"
 
-      - name: Publish Project
-        run: |          
-          lerna publish --canary --preid ci.$(git rev-parse --short HEAD) --dist-tag ci --yes
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish Project
+      #   run: |          
+      #     lerna publish --canary --preid ci.$(git rev-parse --short HEAD) --dist-tag ci --yes
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       
           

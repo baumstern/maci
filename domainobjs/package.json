@@ -1,6 +1,6 @@
 {
     "name": "gaci-domainobjs",
-    "version": "1.1.0",
+    "version": "0.0.0-ci.90b1965",
     "description": "",
     "main": "build/index.js",
     "scripts": {
@@ -12,8 +12,8 @@
     "devDependencies": {
         "@types/jest": "^26.0.21",
         "@types/node": "^14.14.35",
+        "gaci-crypto": "^0.0.0-ci.90b1965",
         "jest": "^26.6.3",
-        "gaci-crypto": "^1.1.0",
         "ts-jest": "^26.5.4"
     },
     "dependencies": {

@@ -1,6 +1,6 @@
 {
     "name": "gaci-contracts",
-    "version": "1.1.0",
+    "version": "0.0.0-ci.90b1965",
     "description": "",
     "main": "build/index.js",
     "scripts": {
@@ -41,11 +41,11 @@
         "@types/jest": "^26.0.21",
         "@types/node": "^14.14.35",
         "ethers": "^5.0.32",
+        "gaci-circuits": "^0.0.0-ci.90b1965",
+        "gaci-core": "^0.0.0-ci.90b1965",
+        "gaci-crypto": "^0.0.0-ci.90b1965",
+        "gaci-domainobjs": "^0.0.0-ci.90b1965",
         "jest": "^26.6.3",
-        "gaci-circuits": "^1.1.0",
-        "gaci-core": "^1.1.0",
-        "gaci-crypto": "^1.1.0",
-        "gaci-domainobjs": "^1.1.0",
         "shelljs": "^0.8.4",
         "truffle-artifactor": "^4.0.30",
         "ts-jest": "^26.5.4"

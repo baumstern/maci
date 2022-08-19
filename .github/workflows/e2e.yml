@@ -17,7 +17,7 @@ jobs:
   #   uses: ./.github/workflows/reusable-e2e.yml
 
   npm-publish:
-    needs: e2e
+    # needs: e2e
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-20.04
     

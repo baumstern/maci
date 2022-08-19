@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-    branches: [ v1 ]
   pull_request:
     branches: [ v1 ]
   schedule:
@@ -14,8 +13,8 @@ concurrency:
 
 jobs:
 
-  e2e:
-    uses: ./.github/workflows/reusable-e2e.yml
+  # e2e:
+  #   uses: ./.github/workflows/reusable-e2e.yml
 
   npm-publish:
     needs: e2e

@@ -1,4 +1,4 @@
-name: Draft Release
+name: Release
 
 on:
   push: 
@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  e2e:
+  draft-release:
     runs-on: ubuntu-20.04
 
     steps:
@@ -18,3 +18,15 @@ jobs:
           echo ${GITHUB_REF##*/}
           echo 'echo end'
           gh release create ${GITHUB_REF##*/} --title "${GITHUB_REF##*/}" --draft --generate-notes --prerelease --repo gurrpi/maci
+
+  publish:
+      runs-on: ubuntu-20.04
+
+      steps:
+        - uses: actions/checkout@v3
+
+        - name: Install dependencies
+          run: |
+            npx lerna publish from-git --dist-tag ${GITHUB_REF##*/} --yes
+          env:
+           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

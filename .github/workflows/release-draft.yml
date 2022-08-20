@@ -2,7 +2,7 @@ name: Release
 
 on:
   push: 
-    tag: ['*']
+    tags: ['*']
 
 
 jobs:
@@ -18,6 +18,8 @@ jobs:
           echo ${GITHUB_REF##*/}
           echo 'echo end'
           gh release create ${GITHUB_REF##*/} --title "${GITHUB_REF##*/}" --draft --generate-notes --prerelease --repo gurrpi/maci
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish:
       runs-on: ubuntu-20.04

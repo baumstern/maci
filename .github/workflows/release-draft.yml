@@ -1,0 +1,20 @@
+name: Draft Release
+
+on:
+  push: 
+    tag: ['*']
+
+
+jobs:
+
+  e2e:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          echo ${GITHUB_REF##*/}
+          echo 'echo end'
+          gh release create ${GITHUB_REF##*/} --title "${GITHUB_REF##*/}" --draft --generate-notes --prerelease --repo gurrpi/maci

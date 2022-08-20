@@ -26,9 +26,9 @@ jobs:
 
       steps:
         - uses: actions/checkout@v3
-
+## Add build
         - name: Install dependencies
           run: |
             npx lerna publish from-git --dist-tag ${GITHUB_REF##*/} --yes
           env:
-           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

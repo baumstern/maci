@@ -1,9 +1,12 @@
 {
-  "scripts": {
-    "prepare:proveOnchain": "bash scripts/install_maci.sh",
-    "proveOnchain": "bash scripts/prove_onchain.sh"
-  },
-  "dependencies": {
-    "@ltd/j-toml": "^1.30.0"
-  }
+    "name": "pulumi-trial",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^16"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3.0.0",
+        "@pulumi/aws": "^5.0.0",
+        "@pulumi/awsx": "^1.0.0"
+    }
 }

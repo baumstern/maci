@@ -2,53 +2,54 @@ name: Coordinator Service
 
 on:
   push: 
-    paths:
-      - 'input/trigger.toml'
+    # paths:
+    #   - 'input/trigger.toml'
 
 concurrency: 
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
 env:
-  COORDINATOR_PRIVATE_KEY: ${{ secrets.COORDINATOR_PRIVATE_KEY }}
-  ETH_PRIVATE_KEY: ${{ secrets.ETH_SK }}
-  ALCHEMY_GOERLI_API_KEY: ${{ secrets.ALCHEMY_GOERLI_API_KEY }}
-  ALCHEMY_ARBITRUM_RINKEBY_API_KEY: ${{ secrets.ALCHEMY_ARBITRUM_RINKEBY_API_KEY }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
 
 jobs:
+
+  create_instance:
+    name: Create EC2 instance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+
+      - uses: pulumi/actions@v3
+        with:
+          command: up
+          stack-name: pulumi-trial
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
   generate-proof:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
 
-      - name: Checkout MACI repo
-        uses: actions/checkout@v3
-        with:
-          repository: appliedzkp/maci
-          ref: a069145cc339c92689c3c2793c70b1b93f208572
-          path: maci
 
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      - name: bootstrap
+        run: ssh@remote ./bootstrap.sh maci_version
 
-      - run: npm install
-        
-      - name: Install MACI
-        run: ./scripts/install_maci.sh
-
-      - name: Generate Proofs
-        run: ./scripts/generate_proofs.sh
-            
-      - name: Tar files
-        run: cd maci/cli && tar -cvzf proofs.tar.gz proofs tally.json
+      - name: run build
+        run: ssh@remote ./build.sh circuit
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: proofs
-          path: maci/cli/proofs.tar.gz
+        run: ssh@remote ./upload.sh

@@ -41,7 +41,7 @@ jobs:
       - uses: pulumi/actions@v4
         with:
           command: up
-          stack-name: pulumi-trial
+          stack-name: dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 

@@ -27,7 +27,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          node-version-file: package.json
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -45,7 +44,10 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
+
+
   generate-proof:
+    needs: create_instance
     runs-on: ubuntu-20.04
 
     steps:
@@ -59,3 +61,18 @@ jobs:
 
       - name: Upload Artifact
         run: ssh@remote ./upload.sh
+
+
+
+
+  tear-down:
+    needs: generate-proof
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: pulumi/actions@v4
+        with:
+          command: down
+          stack-name: dev
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}

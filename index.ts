@@ -14,7 +14,7 @@ const web = new aws.ec2.Instance("maci-builder", {
     associatePublicIpAddress: true,
     keyName: "maci-devops",
     rootBlockDevice: {
-        volumeSize: 20,
+        volumeSize: 50,
         volumeType: "gp3"
     }
 });

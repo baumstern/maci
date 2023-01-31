@@ -3,6 +3,7 @@
 BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
 MACI_DIR="$HOME"/maci
 
+source "$HOME"/.bashrc
 
 # Compile circuits
 cd "$MACI_DIR"/cli/

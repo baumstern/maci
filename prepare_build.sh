@@ -9,6 +9,9 @@ NODE="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/node"
 
 export PATH="$NODE:$NPX:$NPM:$PATH"
 
+echo $PATH
+
+
 sudo ln -s "$(which node)" /usr/bin/node
 sudo ln -s "$(which npm)" /usr/bin/npm
 

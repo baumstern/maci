@@ -45,10 +45,13 @@ jobs:
       #     PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
 
-      # - name: Get instance ip
-      #   run: |
-      #     echo  $(pulumi stack output publicIP)
-      #     echo "builder_ip=$(pulumi stack output publicIP)" >> $GITHUB_ENV
+      - name: Get output
+        run: |
+          echo  $(pulumi stack output publicIp)
+          echo  $(pulumi stack output instanceId)
+          
+          echo "builder_ip=$(pulumi stack output publicIP)" >> $GITHUB_ENV
+          echo "instance_id=$(pulumi stack output instanceId)" >> $GITHUB_ENV
 
 
 
@@ -67,7 +70,7 @@ jobs:
           until [ $(cat result | grep i) ]
           do
             aws ec2 describe-instance-status \
-              --instance-ids i-0353f797cacfaa4c9 \
+              --instance-ids ${{ env.instance_id}} \
               --filters Name=instance-status.reachability,Values=passed \
               --filters Name=system-status.reachability,Values=passed \
               --query "InstanceStatuses[*].InstanceId" \

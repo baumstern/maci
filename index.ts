@@ -20,4 +20,5 @@ const web = new aws.ec2.Instance("maci-builder", {
 });
 
 
-export const publicIP = web.publicIp
+export const publicIp = web.publicIp
+export const instanceId = web.instanceId

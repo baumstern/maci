@@ -67,15 +67,15 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - run: |
-          # until [ $(cat result | grep i) ]
-          # do
+          until [ $(cat result | grep i) ]
+          do
             aws ec2 describe-instance-status \
               --instance-ids ${{ env.instance_id }} \
               --filters Name=instance-status.reachability,Values=passed \
               --filters Name=system-status.reachability,Values=passed \
               --query "InstanceStatuses[*].InstanceId" \
               --output text > result
-          # done
+          done
           
           echo "instance created"
           cat result

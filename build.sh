@@ -7,7 +7,10 @@ NPM="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npm"
 NPX="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npx"
 NODE="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/node"
 
-export PATH="$NODE:$PATH"
+export PATH="$NODE:$NPX:$NPM:$PATH"
+
+sudo ln -s "$(which node)" /usr/bin/node
+sudo ln -s "$(which npm)" /usr/bin/npm
 
 # Compile circuits
 cd "$MACI_DIR"/cli/

@@ -20,7 +20,7 @@ jobs:
 
   create_instance:
     name: Create EC2 instance
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
 
@@ -45,29 +45,38 @@ jobs:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
 
-
-  generate-proof:
-    needs: create_instance
-    runs-on: ubuntu-20.04
-
-    steps:
+      - name: Get instance ip
+        run: |
+          echo  $(pulumi stack output publicIP)
+          echo "builder_ip=$(pulumi stack output publicIP)" >> $GITHUB_ENV
 
 
-      - name: bootstrap
-        run: ssh@remote ./bootstrap.sh maci_version
+
+  # generate-proof:
+  #   needs: create_instance
+  #   runs-on: ubuntu-20.04
+
+  #   steps:
+
+      # Make sure the @v0.7.0 matches the current version of the action
+      - uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: OS tweak
+        run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./twak.sh
 
       - name: run build
-        run: ssh@remote ./build.sh circuit
+        run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./prepare_build.sh
 
-      - name: Upload Artifact
-        run: ssh@remote ./upload.sh
-
-
+      - name: run build
+        run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./build.sh
 
 
   tear-down:
+    if: ${{ always() }}
     needs: generate-proof
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: pulumi/actions@v4

@@ -3,18 +3,18 @@
 BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
 MACI_DIR="$HOME"/maci
 
+NPM="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npm"
 
-source "$HOME"/.bashrc
 
 # Setup maci repo
 cd "$MACI_DIR"
-npm install
-npm run bootstrap
-npm run build
+$NPM install
+$NPM run bootstrap
+$NPM run build
 
 # Compile contracts
 cd "$MACI_DIR"/contracts
-HARDHAT_NETWORK=hardhat npm run compileSol
+HARDHAT_NETWORK=hardhat $NPM run compileSol
 
 # Symlink ptau files
 mkdir -p "$MACI_DIR"/cli/zkeys

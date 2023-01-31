@@ -3,11 +3,11 @@
 BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
 MACI_DIR="$HOME"/maci
 
-source "$HOME"/.bashrc
 
 # Compile circuits
 cd "$MACI_DIR"/cli/
-npx zkey-manager compile -c ./zkeys.config.yml
+/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npx zkey-manager \
+    compile -c ./zkeys.config.yml
 
 
 # Generate .zkey files

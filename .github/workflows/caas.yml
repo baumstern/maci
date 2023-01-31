@@ -50,7 +50,7 @@ jobs:
           echo  $(pulumi stack output publicIp)
           echo  $(pulumi stack output instanceId)
           
-          echo "builder_ip=$(pulumi stack output publicIP)" >> $GITHUB_ENV
+          echo "builder_ip=$(pulumi stack output publicIp)" >> $GITHUB_ENV
           echo "instance_id=$(pulumi stack output instanceId)" >> $GITHUB_ENV
 
 
@@ -82,14 +82,14 @@ jobs:
 
 
 
-      # - name: OS tweak
-      #   run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./tweak.sh
+      - name: OS tweak
+        run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./tweak.sh
 
-      # - name: run build
-      #   run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./prepare_build.sh
+      - name: run build
+        run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./prepare_build.sh
 
-      # - name: run build
-      #   run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./build.sh
+      - name: run build
+        run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./build.sh
 
 
   tear-down:

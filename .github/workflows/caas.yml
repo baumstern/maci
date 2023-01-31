@@ -76,6 +76,7 @@ jobs:
   tear-down:
     if: ${{ always() }}
     # needs: generate-proof
+    # needs: create_instance
     runs-on: ubuntu-22.04
 
     steps:

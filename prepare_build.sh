@@ -4,7 +4,9 @@ BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
 MACI_DIR="$HOME"/maci
 
 NPM="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npm"
+NODE="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/node"
 
+export PATH="$NODE:$PATH"
 
 # Setup maci repo
 cd "$MACI_DIR"

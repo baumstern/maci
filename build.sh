@@ -3,10 +3,15 @@
 BASE_DIR="$( cd "$( dirname "$0" )" && pwd )"
 MACI_DIR="$HOME"/maci
 
+NPM="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npm"
+NPX="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npx"
+NODE="/home/ubuntu/.nvm/versions/node/v16.19.0/bin/node"
+
+export PATH="$NODE:$PATH"
 
 # Compile circuits
 cd "$MACI_DIR"/cli/
-/home/ubuntu/.nvm/versions/node/v16.19.0/bin/npx zkey-manager \
+$NPX zkey-manager \
     compile -c ./zkeys.config.yml
 
 

@@ -12,8 +12,8 @@ export PATH="$NODE:$NPX:$NPM:$PATH"
 echo $PATH
 
 
-sudo ln -s "$(which node)" /usr/bin/node
-sudo ln -s "$(which npm)" /usr/bin/npm
+sudo ln -s $NODE /usr/bin/node
+sudo ln -s $NPM /usr/bin/npm
 
 
 rm -rf "$MACI_DIR"/cli/zkeys

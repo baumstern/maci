@@ -13,9 +13,9 @@ sudo ln -s "$(which node)" /usr/bin/node
 sudo ln -s "$(which npm)" /usr/bin/npm
 
 # Compile circuits
-cd "$MACI_DIR"/cli/
-$NPX zkey-manager \
-    compile -c ./zkeys.config.yml
+# cd "$MACI_DIR"/cli/
+# $NPX zkey-manager \
+#     compile -c ./zkeys.config.yml
 
 
 # Generate .zkey files
@@ -31,8 +31,8 @@ $NPX zkey-manager \
 /home/ubuntu/.nvm/versions/node/v16.19.0/bin/snarkjs \
 groth16 \
 setup \
-zkeys/ProcessMessages_10-2-1-2_test.r1cs \
-zkeys/powersOfTau28_hez_final_20.ptau zkeys/ProcessMessages_10-2-1-2_test.0.zkey
+"$MACI_DIR"/cli/zkeys/ProcessMessages_10-2-1-2_test.r1cs \
+"$MACI_DIR"/cli/zkeys/powersOfTau28_hez_final_20.ptau zkeys/ProcessMessages_10-2-1-2_test.0.zkey
 
 sleep 10
 
@@ -48,7 +48,8 @@ sleep 10
 /home/ubuntu/.nvm/versions/node/v16.19.0/bin/snarkjs \
 groth16 \
 setup \
-zkeys/TallyVotes_10-1-2_test.r1cs \
-zkeys/powersOfTau28_hez_final_20.ptau zkeys/TallyVotes_10-1-2_test.0.zkey
+"$MACI_DIR"/cli/zkeys/TallyVotes_10-1-2_test.r1cs \
+"$MACI_DIR"/cli/zkeys/powersOfTau28_hez_final_20.ptau \
+"$MACI_DIR"/cli/zkeys/TallyVotes_10-1-2_test.0.zkey
 
 ls -alh zkeys

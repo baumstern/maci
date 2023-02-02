@@ -33,10 +33,6 @@ $NPM install
 $NPM run bootstrap
 $NPM run build
 
-# Compile contracts
-cd "$MACI_DIR"/contracts
-HARDHAT_NETWORK=hardhat $NPM run compileSol
-
 # Symlink ptau files
 mkdir -p "$MACI_DIR"/cli/zkeys
 ln -s "$HOME"/ptaus/* "$MACI_DIR"/cli/zkeys

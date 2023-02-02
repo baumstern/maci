@@ -28,11 +28,11 @@ $NPX zkey-manager \
 --max-semi-space-size=1024 \
 --initial-heap-size=2048000 \
 --expose-gc \
-$(which snarkjs) \
+/home/ubuntu/.nvm/versions/node/v16.19.0/bin/snarkjs \
 groth16 \
 setup \
 zkeys/ProcessMessages_10-2-1-2_test.r1cs \
-zkeys/powersOfTau28_hez_final_22.ptau zkeys/ProcessMessages_10-2-1-2_test.0.zkey
+zkeys/powersOfTau28_hez_final_20.ptau zkeys/ProcessMessages_10-2-1-2_test.0.zkey
 
 sleep 10
 
@@ -45,10 +45,10 @@ sleep 10
 --max-semi-space-size=1024 \
 --initial-heap-size=2048000 \
 --expose-gc \
-$(which snarkjs) \
+/home/ubuntu/.nvm/versions/node/v16.19.0/bin/snarkjs \
 groth16 \
 setup \
 zkeys/TallyVotes_10-1-2_test.r1cs \
-zkeys/powersOfTau28_hez_final_23.ptau zkeys/TallyVotes_10-1-2_test.0.zkey
+zkeys/powersOfTau28_hez_final_20.ptau zkeys/TallyVotes_10-1-2_test.0.zkey
 
 ls -alh zkeys

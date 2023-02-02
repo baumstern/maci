@@ -27,9 +27,6 @@ cd "$MACI_DIR"
 git fetch
 git pull origin circuit-builder
 
-mkdir -p "$MACI_DIR"/cli/zkeys
-cd "$MACI_DIR"/cli/zkeys
-wget https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_08.ptau
 
 
 $NPM install

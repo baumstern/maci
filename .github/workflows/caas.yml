@@ -18,10 +18,13 @@ env:
 
 jobs:
 
-  create_instance:
-    name: Create EC2 instance
+  generate:
     runs-on: ubuntu-22.04
     steps:
+
+      ####
+      #### Step 1. Create EC2 instance
+      ####
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v3
@@ -54,13 +57,6 @@ jobs:
           echo "instance_id=$(pulumi stack output instanceId)" >> $GITHUB_ENV
 
 
-
-  generate-artifact:
-    needs: create_instance
-    runs-on: ubuntu-22.04
-
-    steps:
-
       - uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -80,7 +76,9 @@ jobs:
           cat result
 
 
-
+      ####
+      #### Step 2. Genearte circuit artifacts
+      ####
       - name: OS tweak
         run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./tweak.sh
 

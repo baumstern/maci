@@ -55,13 +55,12 @@ jobs:
 
 
 
-  # generate-proof:
-  #   needs: create_instance
-  #   runs-on: ubuntu-20.04
+  generate-artifact:
+    needs: create_instance
+    runs-on: ubuntu-22.04
 
-  #   steps:
+    steps:
 
-      # Make sure the @v0.7.0 matches the current version of the action
       - uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}

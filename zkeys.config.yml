@@ -8,7 +8,7 @@ snarkjsPath: "./node_modules/snarkjs/build/cli.cjs"
 circuits:
 - template: "../circuits/circom/processMessages.circom"
   component: "ProcessMessages"
-  params: [3, 1, 1, 1] # stateTreeDepth, msgTreeDepth, msgBatchDepth, voteOptionTreeDepth
+  params: [2, 2, 1, 1] # stateTreeDepth, msgTreeDepth, msgBatchDepth, voteOptionTreeDepth
   type: "test"
   pubInputs: ["inputHash"]
 

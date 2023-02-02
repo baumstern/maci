@@ -85,6 +85,9 @@ jobs:
       - name: prepare build
         run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./prepare_build.sh
 
+      - name: copy zkeys.config.yml
+        run: scp -o StrictHostKeychecking=no zkeys.config.yml ubuntu@3.67.10.18:/home/ubuntu/maci/cli/
+
       - name: run build
         run: ssh ubuntu@${{ env.builder_ip }} -o StrictHostKeychecking=no "bash -s" < ./build.sh
 

@@ -5,7 +5,7 @@ import * as awsx from "@pulumi/awsx";
 // TODO: generate new IAM to CI builder role
 const web = new aws.ec2.Instance("maci-builder", {
     ami: "ami-08d487b452907cccd",
-    instanceType: "t2.micro",
+    instanceType: "t2.medium",
     tags: {
         Name: "maci-builder",
     },

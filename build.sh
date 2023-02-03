@@ -13,9 +13,9 @@ sudo ln -s "$(which node)" /usr/bin/node
 sudo ln -s "$(which npm)" /usr/bin/npm
 
 # Compile circuits
-# cd "$MACI_DIR"/cli/
-# $NPX zkey-manager \
-#     compile -c ./zkeys.config.yml
+cd "$MACI_DIR"/cli/
+$NPX zkey-manager \
+    compile -c ./zkeys.config.yml
 
 
 # Generate .zkey files

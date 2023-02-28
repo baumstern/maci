@@ -1,0 +1,43 @@
+name: TG-push
+
+on:
+  push:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+
+    steps:
+      # - name: send telegram message on push
+      #   uses: appleboy/telegram-action@v0.1.1
+      #   with:
+      #     to: ${{ secrets.TELEGRAM_TO }}
+      #     token: ${{ secrets.TELEGRAM_TOKEN }}
+      #     message: |
+      #       ${{ github.actor }} created commit:
+      #       Commit message: ${{ github.event.commits[0].message }}
+            
+      #       Repository: ${{ github.repository }}
+            
+      #       See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: "1489221022"
+          token: "6192289485:AAFu3dIlX-ca27d1yju8S1DovaMQ_FjVcZQ"
+          message: |
+            Hello
+
+
+# 1489221022
+
+
+
+# curl https://api.telegram.org/bot6192289485:AAFu3dIlX-ca27d1yju8S1DovaMQ_FjVcZQ/getUpdates
+
+# {"ok":true,"result":[{"update_id":138267604,
+# "my_chat_member":{"chat":{"id":-983111025,"title":"Jubjub's update","type":"group","all_members_are_administrators":true},"from":{"id":1489221022,"is_bot":false,"first_name":"Daehyun","last_name":"Paik","username":"beispielgurr","language_code":"en"},"date":1677554688,"old_chat_member":{"user":{"id":6192289485,"is_bot":true,"first_name":"JubjubGardeningBot","username":"JubjubGardeningBot"},"status":"left"},"new_chat_member":{"user":{"id":6192289485,"is_bot":true,"first_name":"JubjubGardeningBot","username":"JubjubGardeningBot"},"status":"member"}}},{"update_id":138267605,
+# "message":{"message_id":3,"from":{"id":1489221022,"is_bot":false,"first_name":"Daehyun","last_name":"Paik","username":"beispielgurr","language_code":"en"},"chat":{"id":-983111025,"title":"Jubjub's update","type":"group","all_members_are_administrators":true},"date":1677554688,"group_chat_created":true}}]}%

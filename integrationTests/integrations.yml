@@ -17,27 +17,27 @@ invalidVote:
   voteCreditBalance: 1
 constants:
   poll:
-    duration: 120
-    intStateTreeDepth: 1
-    messageTreeDepth: 2
-    messageBatchDepth: 1
+    duration: 360000
+    intStateTreeDepth: 2
+    messageTreeDepth: 8
+    messageBatchDepth: 2
   maci:
-    maxUsers: 15
-    maxMessages: 25
-    maxVoteOptions: 25
+    maxUsers: 15625
+    maxMessages: 390625
+    maxVoteOptions: 125
     initialVoiceCredits: 1000
     signupDuration: 120
-    votingDuration: 120
+    votingDuration: 36000000
     signUpDurationInSeconds: 3600 # 1 hour
     votingDurationInSeconds: 3600 # 1 hour
     coordinatorPrivKey: "2222222222263902553431241761119057960280734584214105336279476766401963593688"
-    messageBatchSize: 4
-    tallyBatchSize: 4
+    messageBatchSize: 2
+    tallyBatchSize: 2
     quadVoteTallyBatchSize: 4
     voteOptionsMaxLeafIndex: 3
-    stateTreeDepth: 10
-    messageTreeDepth:  2
-    voteOptionTreeDepth: 2
+    stateTreeDepth: 6
+    messageTreeDepth:  8
+    voteOptionTreeDepth: 3
     ivcpData: '0x0000000000000000000000000000000000000000000000000000000000000000'
   chain:
     privateKeysPath: './'

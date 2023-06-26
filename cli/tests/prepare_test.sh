@@ -10,8 +10,8 @@ MACI_CLI="node "$BASE_DIR"/../build/index.js"
 
 ZKEYS_POSTFIX="test"
 
-PROCESS_MESSAGES_PARAMS="10-2-1-2_$ZKEYS_POSTFIX"
-TALLY_VOTES_PARAMS="10-1-2_$ZKEYS_POSTFIX"
+PROCESS_MESSAGES_PARAMS="6-8-2-3_$ZKEYS_POSTFIX"
+TALLY_VOTES_PARAMS="6-2-3_$ZKEYS_POSTFIX"
 SUBSIDY_PER_BATCH_PARAMS="10-1-2_$ZKEYS_POSTFIX"
 
 
@@ -19,11 +19,11 @@ init_maci() {
     $MACI_CLI deployVkRegistry
 
     $MACI_CLI setVerifyingKeys \
-        --state-tree-depth 10 \
-        --int-state-tree-depth 1 \
-        --msg-tree-depth 2 \
-        --vote-option-tree-depth 2 \
-        --msg-batch-depth 1 \
+        --state-tree-depth 6 \
+        --int-state-tree-depth 2 \
+        --msg-tree-depth 8 \
+        --vote-option-tree-depth 3 \
+        --msg-batch-depth 2 \
         --process-messages-zkey "$ZKEYS_DIR"/ProcessMessages_"$PROCESS_MESSAGES_PARAMS".0.zkey \
         --tally-votes-zkey "$ZKEYS_DIR"/TallyVotes_"$TALLY_VOTES_PARAMS".0.zkey \
         $SET_VERIFYING_KEYS_FLAG_SUBSIDY
@@ -35,12 +35,12 @@ deploy_poll() {
     $MACI_CLI deployPoll \
         --pubkey macipk.c974f4f168b79727ac98bfd53a65ea0b4e45dc2552fe73df9f8b51ebb0930330 \
         --duration 90 \
-        --max-messages 25 \
-        --max-vote-options 25 \
-        --int-state-tree-depth 1 \
-        --msg-tree-depth 2 \
-        --msg_batch_depth 1 \
-        --vote-option-tree-depth 2
+        --max-messages 390625 \
+        --max-vote-options 125 \
+        --int-state-tree-depth 2 \
+        --msg-tree-depth 8 \
+        --msg_batch_depth 2 \
+        --vote-option-tree-depth 3
 }
 
 clean() {

@@ -1,0 +1,140 @@
+VkRegistry: 0x4A1990a02ceDdD9B49BA227c5D9FA359d6C6BD3F
+Setting verifying keys...
+Transaction hash: 0x87979a1774e80b71dde4e0da36aa661ed451becb51f640dfe384907814e0d47d
+TopupCredit: 0x23B673dEe99771372A9152938C025081FE9bE4A3
+Deploying InitialVoiceCreditProxy
+Deploying Poseidon contracts
+Linking Poseidon libraries to MACI
+Linking Poseidon libraries to PollFactory
+Linking Poseidon libraries to MessageAqFactory
+Deploying MACI
+Transferring PollFactory ownership to MACI
+Transferring MessageAqFactory ownership to PollFactory
+Initialising MACI
+MACI: 0xf78C1e91EBf6D65A44E235Db3b900eaC4B9a8e99
+Verifier: 0x7ad5f8758471D276518eFF1CaFfd3C1D8e1Ba75D
+Poll ID: 0
+Poll contract: 0x7C5bF42055b44dC5272b4db836615fB5dCA2E4cb
+PollProcessorAndTallyer contract: 0x7393615E00b18d55D5f625d3dBbec572bbF57493
+Transaction hash: 0xf7124580aea41cc714544182b8e5f5dda6d3a6497a1dab9a3e51dfe667a85a90
+State index: 1
+Transaction hash: 0xc26bef315996299fe6f727d681c7efbfb434c6144200ff165808f1a07266ba29
+State index: 2
+Transaction hash: 0x608fdc329a18c9d6dbd35724a40deb9c1f3eee3672a5c21310e43309de16b2dd
+State index: 3
+Transaction hash: 0xc1e2309b705c1803b0b75c177db43478ad6559240a1bcce3d08576f9cd0eaaae
+State index: 4
+Transaction hash: 0xab8e11d2535fd163a804dd5ab7f88e36e23905b2830f1a8749e365c9a31fe75d
+State index: 5
+Transaction hash: 0x29c12919158b295b88bf382db0c667078b90cba62721dc35d505cff325f54c72
+State index: 6
+Transaction hash: 0x52217cb3a84c2c30fb8e120280571006e9da2e4afc12d2fa806b9fc19c9fc3c6
+State index: 7
+Transaction hash: 0xdd89e5683efec7c4ac41bebb19cad9ef7be07e5ec2dc81f4918305efc7c89b30
+State index: 8
+Transaction hash: 0x69e78f756eda0241b8604dce675493654c383f10f7a83f55e40479b165bebe0a
+Ephemeral private key: macisk.3e970b851029ad53c5764fd723e3b901692d88c988004c66b5b1553a83ac28
+Transaction hash: 0xca40e9fa475804d5fb2c0c52c1aaeff48acb25adaeb8140e63a37815cc7c9e0c
+Ephemeral private key: macisk.258a1e545156985f29e8e8dcbdc73ff2bef413e456d7915eca056188e96de373
+Transaction hash: 0x5f2cf6a7cb79c6b7e102d3a6d4f3006fc7193341fec5c0b9486ce2fcc2ad423a
+Ephemeral private key: macisk.20796905d24dca3a2eef2a2d594391397daadc0674daf76db383e11b67e65a65
+Transaction hash: 0x8ba1bbe33bfff5a13c16c4bfb2c785ce12cdf90aae478cfe9d023cb2d21c050c
+Ephemeral private key: macisk.11b1da7a8cc20590fdec4c73e2c70683a8a03e82257ab8b7569819b522977a75
+Transaction hash: 0x6aa1c14b772a4307ae33135806aa02b32b39075b0ceff4e9df6a3a97c0a56100
+Ephemeral private key: macisk.b7751f0635491878afcb99a72339cbf7f87ed72010152b8c6dda18ce39ed484
+Transaction hash: 0x7ef53ddf1fc170ebb1e0a3d596ec16c3eb7dd3b43da8b0513aa8913018658814
+Ephemeral private key: macisk.a5d0d0d8312fd26e3fabbdc3a1076c3587e0b17f83aa04289508fbcc00a12ce
+Transaction hash: 0xd3a04e39404282510f9f35d3d770fa5f2369745231fb3e8c3b3da2d8c2880480
+Ephemeral private key: macisk.b6e41e07bc210217613f7da9604ebad09adebbb947bb401fc263664d8f96219
+Transaction hash: 0x0fc52665d3c2e492819c7434585842cb0bd87412359fd7b0b4de340e7ba077dc
+Ephemeral private key: macisk.ca7231e42e489e6696774abb6dfd505f0372f50e66b07f813717882654c51bc
+Merging message subroots 1 / 2
+Executed mergeMaciStateAqSubRoots(); gas used: 849422
+Transaction hash: 0x1da186afe617f1d494c9f3acd95ffc6602d385b197f4eebd458c9121c2393e26
+
+All message subtrees have been merged.
+Merging subroots to a main message root...
+Executed mergeMessageAq(); gas used: 71020
+Transaction hash: 0xa9e5f0ffebf829cc256468c5b76e7f2d04bf2aa4269e1d3fc32c593c4d852ccb
+The message tree has been merged.
+Merging state subroots 1 / 1
+Executed mergeMaciStateAqSubRoots(); gas used: 712561
+Transaction hash: 0xa0e64e59ddbcf6b224df41376a11a3ea02757fc1f9cd5cfb927eebeaa741c920
+
+All state subtrees have been merged.
+Merging subroots to a main state root...
+Executed mergeStateAq(); gas used: 1005142
+Transaction hash: 0x80a331a4d4d875884e9ed3470b455bb667b34758331cf7b3b121731ea28c2a75
+The state tree has been merged.
+fromBlock = 0
+Generating proofs of message processing...
+witnessGen: 381.182ms
+proofGen: 3.744s
+verifyProof: 885.938ms
+
+Progress: 1 / 2
+witnessGen: 467.453ms
+proofGen: 3.831s
+verifyProof: 885.424ms
+
+Progress: 2 / 2
+----------processMessages, 13.611 seconds, 2 proofs
+
+Generating proofs of vote tallying...
+witnessGen: 310.395ms
+proofGen: 2.515s
+verifyProof: 882.847ms
+
+Progress: 1 / 1
+
+OK
+----------tallyVotes, 4.697 seconds, 1 proofs
+Submitting proofs of message processing...
+Transaction hash: 0x2bc3926cafae680a3b2299792992c917ffd337621259dc51801965acbebaa62b
+totalBatches, 2, processMessagesBatchNum, 0,  txGasUsed, 415524
+Progress: 1 / 2
+Transaction hash: 0xe9fd268f1da0ceaa048546519be81941c4f75d62977f4bf02a054a2622a6cb4c
+totalBatches, 2, processMessagesBatchNum, 1,  txGasUsed, 395576
+Progress: 2 / 2
+All message processing proofs have been submitted.
+
+Submitting proofs of vote tallying...
+Progress: 1 / 1
+Transaction hash: 0x1d7c5a6af15136b6a64b1a43824f4c049a7ba8f6f33577648bb5910fea2136a1
+totalBatches, 1, tallyBatchNum, 1, txGasUsed, 380562
+All vote tallying proofs have been submitted.
+
+OK
+26d6419c04bcccc41d675520012e5297bbeca6392db5b9a948cb3be77845623b
+-------------tally data -------------------
+{
+  provider: 'http://localhost:8545',
+  maci: '0xf78C1e91EBf6D65A44E235Db3b900eaC4B9a8e99',
+  pollId: 0,
+  newTallyCommitment: '0x26d6419c04bcccc41d675520012e5297bbeca6392db5b9a948cb3be77845623b',
+  results: {
+    tally: [
+      '8', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x806d00c678a650b78ae1c6dc33d55e8675511bee690e4483da3a6cb9a5abe8'
+  },
+  totalSpentVoiceCredits: {
+    spent: '8',
+    salt: '0x9cf3aec7711b1fec865cc05a704262cb4619b7d4ce189a889a23985a9190661'
+  },
+  perVOSpentVoiceCredits: {
+    tally: [
+      '8', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x155de64d36beff4e3dd108608b9bea71298f6d98c57ae400bec741de760c0b43'
+  }
+}
+OK. finish verify

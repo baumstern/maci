@@ -8,7 +8,7 @@ snarkjsPath: "./node_modules/snarkjs/build/cli.cjs"
 circuits:
 - template: "../circuits/circom/processMessages.circom"
   component: "ProcessMessages"
-  params: [10, 2, 1, 2] # stateTreeDepth, msgTreeDepth, msgBatchDepth, voteOptionTreeDepth
+  params: [6, 8, 2, 3] # stateTreeDepth, msgTreeDepth, msgBatchDepth, voteOptionTreeDepth
   type: "test"
   pubInputs: ["inputHash"]
 
@@ -20,7 +20,7 @@ circuits:
 
 - template: "../circuits/circom/tallyVotes.circom"
   component: "TallyVotes"
-  params: [10, 1, 2] # stateTreeDepth, intStateTreeDepth, voteOptionTreeDepth
+  params: [6, 2, 3] # stateTreeDepth, intStateTreeDepth, voteOptionTreeDepth
   type: "test"
   pubInputs: ["inputHash"]
 
@@ -30,12 +30,6 @@ circuits:
   #type: "prod"
   #pubInputs: ["inputHash"]
 
-
-- template: "../circuits/circom/subsidy.circom"
-  component: "SubsidyPerBatch"
-  params: [10, 1, 2] # stateTreeDepth, intStateTreeDepth, voteOptionTreeDepth
-  type: "test"
-  pubInputs: ["inputHash"]
 
 
 ptauFiles:

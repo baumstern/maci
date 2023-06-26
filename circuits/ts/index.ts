@@ -31,9 +31,13 @@ const genProof = (
     const jsonData = JSON.stringify(stringifyBigInts(inputs))
     fs.writeFileSync(inputJsonPath, jsonData)
 
+    
+
     // Generate the witness
     const witnessGenCmd = `${witnessExePath} ${inputJsonPath} ${outputWtnsPath}`
 
+
+    console.time('witnessGen')
     const witnessGenOutput = shelljs.exec(witnessGenCmd, { silent })
     if (witnessGenOutput.stderr) {
         console.log(witnessGenOutput.stderr)
@@ -43,14 +47,19 @@ const genProof = (
         console.error(witnessGenOutput.stderr)
         throw new Error('Error executing ' + witnessGenCmd)
     }
+    console.timeEnd('witnessGen')
+
 
     // Generate the proof
     const proofGenCmd = `${rapidsnarkExePath} ${zkeyPath} ${outputWtnsPath} ${proofJsonPath} ${publicJsonPath}`
+
+    console.time('proofGen')
     shelljs.exec(proofGenCmd, { silent })
 
     if (!fs.existsSync(proofJsonPath)) {
         throw new Error('Error executing ' + proofGenCmd)
     }
+    console.timeEnd('proofGen')
 
     // Read the proof and public inputs
     const proof = JSON.parse(fs.readFileSync(proofJsonPath).toString())
@@ -100,9 +109,11 @@ const verifyProof = (
     )
 
     const verifyCmd = `node ${snarkjsPath} g16v ${vkJsonPath} ${publicJsonPath} ${proofJsonPath}`
+
+    console.time('verifyProof')
     const output = shelljs.exec(verifyCmd, { silent: true })
     const isValid = output.stdout && output.stdout.indexOf('OK!') > -1
-
+    console.timeEnd('verifyProof')
     //// Generate calldata
     //const calldataCmd = `node ${snarkjsPath} zkesc ${publicJsonPath} ${proofJsonPath}`
     //console.log(shelljs.exec(calldataCmd).stdout)

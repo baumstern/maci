@@ -1,0 +1,108 @@
+VkRegistry: 0x899033D987a2247D99F322c36c6EA693E81537c1
+Setting verifying keys...
+Transaction hash: 0xee3570fa0d295438fb7bf9a5e86324d05a6d0d926d6c36638a8c06bee54f11e6
+TopupCredit: 0xCAc5a1b3b1b373c582760632032Ded4A1fA30522
+Deploying InitialVoiceCreditProxy
+Deploying Poseidon contracts
+Linking Poseidon libraries to MACI
+Linking Poseidon libraries to PollFactory
+Linking Poseidon libraries to MessageAqFactory
+Deploying MACI
+Transferring PollFactory ownership to MACI
+Transferring MessageAqFactory ownership to PollFactory
+Initialising MACI
+MACI: 0xc80e0Af5Dd6267A90Ba14E46F8B489057822540D
+Verifier: 0x40A62AC8903bdbB42eFaa9E4109B8883b51C2087
+Poll ID: 0
+Poll contract: 0xa0D69029c3bcd9903F9E7A79b9E371d139D6e4F0
+PollProcessorAndTallyer contract: 0xe339A342d3215fB0dECaEBa59816dD374dcfD8e8
+Transaction hash: 0xe2abddbe8b59b59b206ec7c0e3f1eea8918a1976bae7d2780af323aba54ece88
+State index: 1
+Transaction hash: 0x699fd404ea7cf4acbe0ca259e5b956a8293fb668b0bb1e6cfb910d2aeb658c53
+State index: 2
+Transaction hash: 0xd6e399bb3d5eb5aaeb54ddb92a7ab778d02da08175ae2ca671386b0b2deff7b5
+Ephemeral private key: macisk.cbdec08f284b50203ad3e27b31099fe289e025e457094f3a7b7a1c6ed4fe6c
+Transaction hash: 0xa8313e5c8b94a25a8cb0995fd7da01187db14e2898f12b29e6a5762c7e64e1f1
+Ephemeral private key: macisk.1723346f9794473bba61753b78b634b22bc34b787c74360fa15aab21ebee290
+Merging message subroots 1 / 1
+Executed mergeMaciStateAqSubRoots(); gas used: 600637
+Transaction hash: 0xfec0ba0a0a889e981d6bcb9f331f3bf24438ad889ada3a33f6756704ab82c7f8
+
+All message subtrees have been merged.
+Merging subroots to a main message root...
+Executed mergeMessageAq(); gas used: 173396
+Transaction hash: 0x19bce20b5c4f4b9247d873d76c080ed330d15f5b1add58dc89ff856a1e39266f
+The message tree has been merged.
+Merging state subroots 1 / 1
+Executed mergeMaciStateAqSubRoots(); gas used: 718417
+Transaction hash: 0xab542a93cf6e489905bc2d7920e0d8c9feec44f1edea89f552cb611824c3a7af
+
+All state subtrees have been merged.
+Merging subroots to a main state root...
+Executed mergeStateAq(); gas used: 1005142
+Transaction hash: 0x118be0513e9920892c63ec4b454b21b9b56be6a8237e42d38cf940d484895b4e
+The state tree has been merged.
+fromBlock = 0
+Generating proofs of message processing...
+witnessGen: 660.918ms
+proofGen: 4.686s
+verifyProof: 995.102ms
+
+Progress: 1 / 1
+----------processMessages, 7.613 seconds, 1 proofs
+
+Generating proofs of vote tallying...
+witnessGen: 295.733ms
+proofGen: 2.452s
+verifyProof: 1.322s
+
+Progress: 1 / 1
+
+OK
+----------tallyVotes, 5.168 seconds, 1 proofs
+Submitting proofs of message processing...
+Transaction hash: 0x4183b0abf71aadb204d8f85d30e883f30c9e58d3cf057cc3f975bb09c4ef0438
+totalBatches, 1, processMessagesBatchNum, 0,  txGasUsed, 435144
+Progress: 1 / 1
+All message processing proofs have been submitted.
+
+Submitting proofs of vote tallying...
+Progress: 1 / 1
+Transaction hash: 0x71a7f81a99877ffeb4c9ad56d453cbc57c5f2fc6e145eff2aeebecb994bb2f2c
+totalBatches, 1, tallyBatchNum, 1, txGasUsed, 380526
+All vote tallying proofs have been submitted.
+
+OK
+28b08b32e728c804ef37cccd481e2714df011a08c89a76f145b6aa05009ec8e6
+-------------tally data -------------------
+{
+  provider: 'http://localhost:8545',
+  maci: '0xc80e0Af5Dd6267A90Ba14E46F8B489057822540D',
+  pollId: 0,
+  newTallyCommitment: '0x28b08b32e728c804ef37cccd481e2714df011a08c89a76f145b6aa05009ec8e6',
+  results: {
+    tally: [
+      '2', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x2b345388eda771cccb5fe4d642fc11158a56bde7d1670dc7e402837753c49157'
+  },
+  totalSpentVoiceCredits: {
+    spent: '2',
+    salt: '0x106babe3083a0cc818c22476ec8ce0a6f412c1dd78f4df16a3b71859a7f9151a'
+  },
+  perVOSpentVoiceCredits: {
+    tally: [
+      '2', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x26eb5fe1424cdda0dc19ab3e92489562066424648c52928eb9b40f3dcdbe73ac'
+  }
+}
+OK. finish verify

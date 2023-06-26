@@ -1,0 +1,109 @@
+VkRegistry: 0xC54eF055D8f73f1cdE866D9AfEf040D5a48Cc051
+VkRegistry: 0x3d7E306a24789921bd318F59851dAa13360f7f75
+Setting verifying keys...
+Transaction hash: 0xe76b1407898d6a852642538dd02c8136695d2214ff29d01cad77c2cb9865d2f2
+TopupCredit: 0x7cA9e0fAac17e1CB75e86E783Cccba7804aE3c15
+Deploying InitialVoiceCreditProxy
+Deploying Poseidon contracts
+Linking Poseidon libraries to MACI
+Linking Poseidon libraries to PollFactory
+Linking Poseidon libraries to MessageAqFactory
+Deploying MACI
+Transferring PollFactory ownership to MACI
+Transferring MessageAqFactory ownership to PollFactory
+Initialising MACI
+MACI: 0x524c7CA79Ff34bE144cD9b0eC64937bb4ed82D35
+Verifier: 0xB593Eefa9f23e889BB75924A663580dfAcC2c50d
+Poll ID: 0
+Poll contract: 0x9bcb65376b44336794Fbe2ec536DABa00D875F67
+PollProcessorAndTallyer contract: 0xeF422EEa1394f7Ad31FB5c0FC271937bBE18D090
+Transaction hash: 0xb3ffcec87d3c679bef2cf46c98d80f571e8dd521357450d155d85384e502d8a8
+State index: 1
+Transaction hash: 0x8f4f8f5e3e2756cb409303ef850e8eddd7a796468f6f1ea7fe082bbacb625017
+State index: 2
+Transaction hash: 0xf98993f306996018002e46fe7476c41a2e21ca9981f9687d7a722e1fdea7b234
+Ephemeral private key: macisk.15c3d3f4d3736e62c428d3d489b5dbfe23080d379882f1d218e284c44ea7a585
+Transaction hash: 0xe8f43aeae9bc6b735bdcd7ca4ce6779d3941740b9c8052c82334d303347ddb9d
+Ephemeral private key: macisk.23cc5b8d2abf1895aea78e4e16dd185e17ca33ee13dbb7a93b85384f0a5dd29b
+Merging message subroots 1 / 1
+Executed mergeMaciStateAqSubRoots(); gas used: 600637
+Transaction hash: 0x94f61469d5d1be5befceb52993ee64f61c6f02d74b8b5f1ee5d58cbb42fd6aef
+
+All message subtrees have been merged.
+Merging subroots to a main message root...
+Executed mergeMessageAq(); gas used: 173396
+Transaction hash: 0x45990f0aae6020630817c6486c498dfae55a72c7056a7e9ba7e2ae503212a7da
+The message tree has been merged.
+Merging state subroots 1 / 1
+Executed mergeMaciStateAqSubRoots(); gas used: 718417
+Transaction hash: 0xf2d481df19109e0345843327d83b0a8c5f31705084b636dec2f09b8c2305d787
+
+All state subtrees have been merged.
+Merging subroots to a main state root...
+Executed mergeStateAq(); gas used: 1005142
+Transaction hash: 0x21d4a27c8209c542aa4501d4df51f205cd3ded474abb18e57b8c42c6c05b6eb9
+The state tree has been merged.
+fromBlock = 0
+Generating proofs of message processing...
+witnessGen: 467.515ms
+proofGen: 5.393s
+verifyProof: 1.098s
+
+Progress: 1 / 1
+----------processMessages, 7.92 seconds, 1 proofs
+
+Generating proofs of vote tallying...
+witnessGen: 273.843ms
+proofGen: 2.894s
+verifyProof: 1.269s
+
+Progress: 1 / 1
+
+OK
+----------tallyVotes, 5.767 seconds, 1 proofs
+Submitting proofs of message processing...
+Transaction hash: 0x5a74de94a9ea94fb14093e2123f063950e40b5b41928f1bb18e4c676c8664d69
+totalBatches, 1, processMessagesBatchNum, 0,  txGasUsed, 435132
+Progress: 1 / 1
+All message processing proofs have been submitted.
+
+Submitting proofs of vote tallying...
+Progress: 1 / 1
+Transaction hash: 0x7a23d21ee5f935fb5daf3493bf3c3feee295453fda29c0cc889f7140f04a2f49
+totalBatches, 1, tallyBatchNum, 1, txGasUsed, 380550
+All vote tallying proofs have been submitted.
+
+OK
+2a9fafecfaf54d67df0e4fbec2dc896c814a6a3968a4d9087d796100e2ccea23
+-------------tally data -------------------
+{
+  provider: 'http://localhost:8545',
+  maci: '0x524c7CA79Ff34bE144cD9b0eC64937bb4ed82D35',
+  pollId: 0,
+  newTallyCommitment: '0x2a9fafecfaf54d67df0e4fbec2dc896c814a6a3968a4d9087d796100e2ccea23',
+  results: {
+    tally: [
+      '2', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x1b60b717a781825afa26bab5c3d18359ee985da369f626ad18ffc92f4e9211eb'
+  },
+  totalSpentVoiceCredits: {
+    spent: '2',
+    salt: '0x2d6092e61667a309c46a5a4e58c80cfa210288f3969dd5982f5b22b64aa2c295'
+  },
+  perVOSpentVoiceCredits: {
+    tally: [
+      '2', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0', '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x10c57c70279e2c3c2144f9f89dd80dc7257533db03cb6366a277963d24223bec'
+  }
+}
+OK. finish verify

@@ -1,0 +1,173 @@
+VkRegistry: 0xEF63852d8ffeD59Dcc5cF0069827dc9b55C14dD1
+Setting verifying keys...
+Transaction hash: 0x566c7fcc66661f7936158aa8e199950de8e104a72956df95cf75abb3797961b7
+TopupCredit: 0x109504f8c3F972C2F060ddaA5019b40798A8Bfd3
+Deploying InitialVoiceCreditProxy
+Deploying Poseidon contracts
+Linking Poseidon libraries to MACI
+Linking Poseidon libraries to PollFactory
+Linking Poseidon libraries to MessageAqFactory
+Deploying MACI
+Transferring PollFactory ownership to MACI
+Transferring MessageAqFactory ownership to PollFactory
+Initialising MACI
+MACI: 0xD8C4258C29A96E0fa3DFF11Ca872549Cd85E805D
+Verifier: 0x237DBE3CE303fa018beE27A83e92552B315836dc
+Poll ID: 0
+Poll contract: 0x505c020c5780fb85dD00017B6578EB1c7Af981A5
+PollProcessorAndTallyer contract: 0x512929Aaa7F28da8347eAF66B38aC0C213dED92d
+Transaction hash: 0x493e04b779a8da2a680c8dc3f45637eed79d407444dd3a8e4751f52d29766767
+State index: 1
+Transaction hash: 0x78111208ca86a0c589fb2a4202dc1753003ce6c6bbe67d82ee3573b82ddd92c1
+State index: 2
+Transaction hash: 0xc8a23c90ddaedb377e0d38ae644b245224eeabc1c2fea66be5ecb615a989379a
+State index: 3
+Transaction hash: 0xa9daa6443cde3c09f38b1b9bb1df3d5a72eea44fb24b95df1197cef05c2b1541
+State index: 4
+Transaction hash: 0x5b080662a4d61dcbf84101eb1c9c42f35089020c7da9d72ad8a5bcb2ef7dd7a2
+State index: 5
+Transaction hash: 0xf7d19c08e0cd4015b24486909df07a7c9122904ec93c968c7eee7621fa111372
+State index: 6
+Transaction hash: 0x67afe4dcb11c23d0ae15276fd6ba4a88e2286d5089df11d7243cc04dd1266764
+State index: 7
+Transaction hash: 0x6484655d9304fc1353e459f69d72a15d1dce493918c5dadc7f1481974c0f2988
+State index: 8
+Transaction hash: 0x82a9e55dfecf98949b50cc20528549f66be0437375eeddbc27917ef8753455a5
+State index: 9
+Transaction hash: 0x3156f1e7d20a9fb5ed6a8236776d7b6f3696ee2105034bc4dbce6e93dfa07bcb
+State index: 10
+Transaction hash: 0x3281ca850eb186a74c3cb7f7541015294c9fbfd78263310d71ae000d18ef229c
+State index: 11
+Transaction hash: 0x1d47aaa3b10fdf3b175b6852123b8795008cc47a756a614d8dfe2992b810fead
+State index: 12
+Transaction hash: 0x70c2ad3240cde2e2a6238722e280ea51f4f59cf4511c402ede469cde0921a625
+State index: 13
+Transaction hash: 0x1f2c0a094fed07f69a3ddf1c44810a6587376bca5288e1df7c7640a525621fb5
+State index: 14
+Transaction hash: 0x2fc814a3e6f616b907be5e6051a513fe3888155d05d5a3703bd3b738af22d7aa
+State index: 15
+Transaction hash: 0x110b361329119f1aa55858ac0065e7342d1e8f1de8d512ab64d90cebea643e63
+State index: 16
+Transaction hash: 0xe77c11cda267eb984690f92ebb983b707a76da48fbbff9e0e4a89e85d2dfcb38
+State index: 17
+Transaction hash: 0xfcb0f03546cc38f0e9f4c00395dfedac8f53bf96ebcd09b8e7a939e8fef8db69
+State index: 18
+Transaction hash: 0x410d5730bf3854841a5c0308ca579e1b28d845b933093dcc499ac10f2cf221ee
+State index: 19
+Transaction hash: 0x1947aa6e464fbaa0a372d38ebac729fcf54e98ee2a4cb9b1c14f6e19394dbdff
+State index: 20
+Transaction hash: 0x4b565734ca8173d71eaaade46651752c2b1682424c3be43507aebd0b87a0404d
+State index: 21
+Transaction hash: 0x5aa4d6a5a88edfa323a55b4a7eb43d34387830b69d78f1fe9c6a717dfdf4737a
+State index: 22
+Transaction hash: 0x31e8903126ef18f4c3d2c3cdf89200e492f8eeaf65da6c44e622a83cacfba4e6
+State index: 23
+Transaction hash: 0x81f03c498ab779890ee85db5c751f30bd18a548ca7c546877a88e7a8e2418424
+State index: 24
+Transaction hash: 0x5bfa97575deca7e7c84f2371e7194ef4a000a8cbeebfe454611d5b6c9a344458
+State index: 25
+Transaction hash: 0x4afe120319cb2275a28e0fd2df5d1d35053bebef0f0049919816b118a788fd7d
+Ephemeral private key: macisk.80ab4f92fb771452a4be526bc15012db0e38b414d095314483575e7b790ad98
+Transaction hash: 0x97672654e56a27ff40907aca4e6cc0bc744dee4355b5bffd412a463773d75ea8
+Ephemeral private key: macisk.1a19cc06991541c2974b526b2129f04929fd8575d3434a80e89cc8c61e177002
+Transaction hash: 0xe44c6444747393cf345a35f0c2c26562774febdc8c0a92493631cb8bec2664f3
+Ephemeral private key: macisk.1e8125a4a9dbe152fa7b379b529c8530057086cd05747d04c4b7ce7981accbb8
+Transaction hash: 0x667d5f1e07e4cbff54f4c9e386573413449d42f2088c54cf2a8fc8e986f30e14
+Ephemeral private key: macisk.2dd35b67ec9c4ed0f44935b98aefd44fb5ef138b07996c8bdbee3bf34d1d0ec9
+Transaction hash: 0xdcb14a18618a0ff9ba0d2ca1f8de5b98bf773ee770eca7426faa7812d47b3b32
+Ephemeral private key: macisk.123fb7fbd6d2d1636a28d75a0eb03d3489c6754a11be30a57e45300494618871
+Transaction hash: 0x3f245277ef157553e92a42d629d49e2c0f7cb7f9ee82f0a83c10740047e6873d
+Ephemeral private key: macisk.db86724ebab1b2b255bf23996b737c71655d16123e3084b174618478642d653
+Transaction hash: 0x0eb11e161d77d797e7b5ea376583321f17ee0513ab7e25c2604d54095e031e34
+Ephemeral private key: macisk.206de90abcbf621b3591af1e1886464150fa127b065a0870fd989c66b2e8efff
+Transaction hash: 0x7d41c584adda74bf0b416dd8e403666bf6b8712d23648605ab377c423e1864e4
+Ephemeral private key: macisk.2c3b6c170698c3ae2884d172ea2f6adeb5de558d05b2ffc5888ff37549af9275
+Transaction hash: 0xbd0371d561f64b5d79ebdfe6f1dc9ec2eece7fa591099534e5216a213662127c
+Ephemeral private key: macisk.1995378f049fa69c4dcca899c54acde9d9dd79bf3e001a627a04a781b0f1f255
+Transaction hash: 0x6054ed9f839305a2a0312ec978f3e14c718b5e02443ad392af2b39cb3447b5e9
+Ephemeral private key: macisk.b3c7cda2592cb773abe98c30dc905cfd4022b313019338946e6fd66c38ed793
+Transaction hash: 0x8a7ad0d3a5a64e31a9a6a83d2295054cd110043369eccf47002202f3889a0cb8
+Ephemeral private key: macisk.195f8c8caaf13056e2683c6312380170811469d647cec61cdce43fc3f52afec
+Transaction hash: 0x10e0970dca79f13d3df772566be888c34e39cf29c652e4e580a065c04b531cf8
+Ephemeral private key: macisk.109ecf896c7377aaa68fe18a8751219fb4b3984eee11612fe1e7f65f8c36bc89
+Transaction hash: 0x392fab1201fffbadb6c6ce1531709a9501127a16fb195c373a9b6de5126b88a0
+Ephemeral private key: macisk.4104ba279897bf586574f1be8f9eef014b77e5bc8dd0804d63bcf40f95f927
+Transaction hash: 0xb1d7b02c9dfcbb1bcc9c56f00ceb805316883ac06c68955fcc1aeba6449d69c3
+Ephemeral private key: macisk.2afbe8fb7011bfa7fbab36a0994f2aad3c1082318bb387d2b6c6e4a2e2d29c19
+Transaction hash: 0x857f41793dcc2048cf0eefee2b27d4e723dd22b42d2f27c5b86f4fdbabeb44bd
+Ephemeral private key: macisk.19ae7319ea93b411da2313c8b91947097710d896655dc0ccdbb4d8c9da4177b7
+Transaction hash: 0x08b3e97d260047b0e9ddc52c5523b6a1a9989a11ab86acb3e5f144d0720f43de
+Ephemeral private key: macisk.212b78c23f11e66df2f025cc7eaf666c5a8a42dea21ddef62e2d442ccbc97ff1
+Transaction hash: 0x535637e411ae5cca13dd038b5fa7ac17739f14fbafb9cba74b627bc523f195e1
+Ephemeral private key: macisk.73e638a23d419854b24a4e5335945795a1526033763f2d1142458f1e96b9f40
+Transaction hash: 0xf4c64f10327b270b6f54d251c0f2997423ed12d812815a53248851e9736f95b0
+Ephemeral private key: macisk.4ff79b99d12ca1cdf4520b74b097d9baa02fdc2e64a9a18273f326b3ae48731
+Transaction hash: 0x630ec3599446b26d34db2896702b77dcaaf8fb87d9376f5223b22434213674c6
+Ephemeral private key: macisk.1cc93a199d5126b406b0e4956326626407419c4c3ffebd1061de4474720bf72
+Transaction hash: 0x7ad872f6963cd05a545a6226a0f753842805f41f6792e4753a7b9f78a27ac15d
+Ephemeral private key: macisk.27d9f64d0ddad34ed99baa5c92aea0d6bf2b6c62dfc9c31de315a45ca3d73c29
+Transaction hash: 0x55fdfb4200d8804d1b622a78c7ab154b6c504ed2408cdd95a37a1aed31228152
+Ephemeral private key: macisk.23f745d60940ca4f9ccf43e22a958c2af8055a89f8b188d9494f721e2fb2be6e
+Transaction hash: 0xc7fd45718632ad9138b849987908a7478d4fa86b0523730e1058a328fee70c39
+Ephemeral private key: macisk.195c60305677d07d5c7924fc7795f627d2996eeac656736f276489376f1004ab
+Transaction hash: 0x151aef27eaf94555e931e728cb5692dca482578c0fe4c4e30c199677fc08a7da
+Ephemeral private key: macisk.22c2f0aa4a3eeaa957af60c7f18f701b84c3e77ed5f728aa258ac8765a0513fc
+Transaction hash: 0x61ff6c0d23e34a90ccbcc817f4eafc3ca6ea6999afad2871c487946a8f42c7ca
+Ephemeral private key: macisk.99f63b1dce6d8e0d2d965641f786d939f921f815386e287343cdffc748da2c2
+Transaction hash: 0xcb1981d78bc8b59e8c967b8bddfe291569b4df5c93634e30b2574d1acc2735c9
+Ephemeral private key: macisk.2eb6e646042e3ca80b8f86f689e95388fb70c679cb9a3ceeb9c03b67025e976b
+Merging message subroots 1 / 6
+Executed mergeMaciStateAqSubRoots(); gas used: 695562
+Transaction hash: 0xffa569a8dc066e381c61c493e3512abb3d50cca10c5a2750be72d323814bbf5b
+
+Merging message subroots 5 / 7
+Executed mergeMaciStateAqSubRoots(); gas used: 875683
+Transaction hash: 0x81583fa50eeddb599f98a76748d74b9b23f1ca5f320a6e0fbaaa58fe85703839
+
+All message subtrees have been merged.
+
+console.error
+    Error: exec failed: 
+    /home/ubuntu/maci/cli/node_modules/@ethersproject/logger/src.ts/index.ts:269
+            const error: any = new Error(message);
+                               ^
+    Error: call revert exception; VM Exception while processing transaction: reverted with reason string "AccQueue: getMainRoot: _depth must be high enough" [ See: https://links.ethers.org/v5-errors-CALL_EXCEPTION ] (method="getMainRoot(uint256)", data="0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000003141636351756575653a206765744d61696e526f6f743a205f6465707468206d757374206265206869676820656e6f756768000000000000000000000000000000", errorArgs=["AccQueue: getMainRoot: _depth must be high enough"], errorName="Error", errorSignature="Error(string)", reason="AccQueue: getMainRoot: _depth must be high enough", code=CALL_EXCEPTION, version=abi/5.7.0)
+        at Logger.makeError (/home/ubuntu/maci/cli/node_modules/@ethersproject/logger/src.ts/index.ts:269:28)
+        at Logger.throwError (/home/ubuntu/maci/cli/node_modules/@ethersproject/logger/src.ts/index.ts:281:20)
+        at Interface.decodeFunctionResult (/home/ubuntu/maci/cli/node_modules/@ethersproject/abi/src.ts/interface.ts:427:23)
+        at Contract.<anonymous> (/home/ubuntu/maci/cli/node_modules/@ethersproject/contracts/src.ts/index.ts:400:44)
+        at step (/home/ubuntu/maci/cli/node_modules/@ethersproject/contracts/lib/index.js:48:23)
+        at Object.next (/home/ubuntu/maci/cli/node_modules/@ethersproject/contracts/lib/index.js:29:53)
+        at fulfilled (/home/ubuntu/maci/cli/node_modules/@ethersproject/contracts/lib/index.js:20:58)
+        at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    
+        at _execute (/home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:37:15)
+        at execute (/home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:27:12)
+        at /home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:237:9
+        at step (/home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:33:23)
+        at Object.next (/home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:14:53)
+        at /home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:8:71
+        at new Promise (<anonymous>)
+        at Object.<anonymous>.__awaiter (/home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:4:12)
+        at executeSuite (/home/ubuntu/maci/integrationTests/ts/__tests__/suites.ts:46:51)
+        at /home/ubuntu/maci/integrationTests/ts/__tests__/suites.test.ts:33:46
+
+      295 |     }
+      296 |     catch(e) {
+    > 297 |         console.error(e)
+          |                 ^
+      298 |         return false
+      299 |     } 
+      300 |     
+
+      at ts/__tests__/suites.ts:297:17
+      at step (ts/__tests__/suites.ts:33:23)
+      at Object.next (ts/__tests__/suites.ts:14:53)
+      at ts/__tests__/suites.ts:8:71
+      at Object.<anonymous>.__awaiter (ts/__tests__/suites.ts:4:12)
+      at executeSuite (ts/__tests__/suites.ts:46:51)
+
+  console.log
+    false
+
+      at ts/__tests__/suites.test.ts:34:21

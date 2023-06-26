@@ -377,7 +377,11 @@ const genProofs = async (args: any) => {
 
     while (poll.hasUnprocessedMessages()) {
 
+        let processMessageStartTime = Date.now()
         const circuitInputs = poll.processMessages(pollId)
+        let processMessageEndTime = Date.now() 
+
+        console.log(`---pollProcessMessages, ${(processMessageEndTime - processMessageStartTime)/1000} seconds`)
 
         let r
         try {
@@ -419,7 +423,7 @@ const genProofs = async (args: any) => {
     }
 
     let endTime = Date.now() 
-    console.log(`----------gen processMessage proof took ${(endTime - startTime)/1000} seconds`)
+    console.log(`----------processMessages, ${(endTime - startTime)/1000} seconds, ${totalMessageBatches} proofs`)
 
 
     const asHex = (val): string => {
@@ -492,7 +496,15 @@ const genProofs = async (args: any) => {
 
     let tallyCircuitInputs
     while (poll.hasUntalliedBallots()) {
+
+        let tallyVotesStartTime = Date.now()
+
         tallyCircuitInputs = poll.tallyVotes()
+
+        let tallyVotesEndTime = Date.now() 
+        console.log(`---pollTallyVotes, ${(tallyVotesEndTime - tallyVotesStartTime)/1000} seconds`)
+
+
         const r = genProof(
             tallyCircuitInputs,
             rapidsnarkExe,
@@ -580,8 +592,7 @@ const genProofs = async (args: any) => {
         console.error('Error: the newTallyCommitment is invalid.')
     }
     endTime = Date.now()
-    console.log(`----------gen tally proof took ${(endTime - startTime)/1000} seconds`)
-
+    console.log(`----------tallyVotes, ${(endTime - startTime)/1000} seconds, ${totalTallyBatches} proofs`)
     return 0
 }
 

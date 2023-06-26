@@ -1,0 +1,188 @@
+VkRegistry: 0x98A939Df597bF329cee7726bDD08D6A9e94bC3C1
+Setting verifying keys...
+Transaction hash: 0x9af142c99cd0bb05eb7752c9f1f766d13e6df7da0f2d22729ee0806e38a7abe2
+TopupCredit: 0x0BbcB50A13dD1Be1cfE2Eed0a38cb120C9a7D5dA
+Deploying InitialVoiceCreditProxy
+Deploying Poseidon contracts
+Linking Poseidon libraries to MACI
+Linking Poseidon libraries to PollFactory
+Linking Poseidon libraries to MessageAqFactory
+Deploying MACI
+Transferring PollFactory ownership to MACI
+Transferring MessageAqFactory ownership to PollFactory
+Initialising MACI
+MACI: 0x6FcF51825bBFC5cd8B60bc3d5D5e36E6c6F0E973
+Verifier: 0x0EA859C8B64709E8ea710AE52E7C2E10177ee7d6
+Poll ID: 0
+Poll contract: 0x5E37f6e5d2439761906FFc6c251dbE1640B382F7
+PollProcessorAndTallyer contract: 0x92a23131d0Be4Df447dc67Ef855fa67dBC87F824
+Transaction hash: 0x94f92ae524df1cfd1fbfa9d684d44a0ccfa3c0f3213c3ed17cd8dc0a04b462e8
+State index: 1
+Transaction hash: 0x711a91ab9a3e1d0378b78c50dadef5b9a38f820102e449aa3b3ea32ef47de42d
+State index: 2
+Transaction hash: 0x5680e093a744a9bbcfb8fb6ef40342913f411bd5c7df181b0fb93a5403953a46
+State index: 3
+Transaction hash: 0x4cd7c6ca10012267b7af35f87734542f7a81f7ed03cca19b9f31ac382480dbe3
+State index: 4
+Transaction hash: 0x1b21f9c5a98702bcd597b097f4f471cf7d6d6dbb7ea2732df4331bde8eeeab17
+State index: 5
+Transaction hash: 0x458cdcd7b50590a81ef686a295a1b44a4006b80306b421a52e0d6390bd2bd19e
+State index: 6
+Transaction hash: 0x3f47cb941db2cb4b9d43c07af66a8473a050ab7a42955257614a98c05594f531
+State index: 7
+Transaction hash: 0xeef8f26a003896523a96618164b2362537a5520acb2812b1b12ad2374b3a194d
+State index: 8
+Transaction hash: 0x1fad1cb0240b49d59ee4094229e6b2f88a8e4186ab8dc73a809b6b085b3ee7ad
+State index: 9
+Transaction hash: 0x9ceb0f1c9735ac5754c8888654ed10904333189389e8bc171078f6f0fd16d979
+State index: 10
+Transaction hash: 0x4b3b7fea1f05e373a9ee521f78350714a1a12cb2a0cd00dc30227335351ded62
+State index: 11
+Transaction hash: 0x067acf8be4f9eeb00413520a20018dc5403e73fc09d06e50eedcedcc2881d18a
+State index: 12
+Transaction hash: 0x54e8503730189316add98b215eabb71fcc4fb61354e40e19e7004f459b33d98a
+State index: 13
+Transaction hash: 0x59712fb34ac99e07e6762edf9655cdaea04a294f23d3458dc64f17ca7a233a9c
+State index: 14
+Transaction hash: 0x882058109ba7403f6842c9b9daf478c43f32a1a823c82787e566691f0307a796
+Ephemeral private key: macisk.27762618f970fd6eba16571211cca79d2159b4ecec2b8c504b503271db6e3a1d
+Transaction hash: 0xbfcb2863ee5da3f968b52c6454b1d432ed213f50a1089e2425fedee0d928d777
+Ephemeral private key: macisk.23ba7f075f07fb1327a75178abc304f09838941764d8c47ff16b9dba5eb09f44
+Transaction hash: 0x9fb15b044c4b77446e9e61bf863f0f009b2d16b398ff47bc29b83dfd184d9d28
+Ephemeral private key: macisk.154ce28b1b88a788c3b497021dc1dc828166761247ff5c99dd76269d8858096f
+Transaction hash: 0xcdcdea34afc0bcf1ff9d35082027a807ab5714d193b795960faf2059fe0f105b
+Ephemeral private key: macisk.1fa727fd4fa78ca484149e8fc2b55daac4de8e1d44f9df444c03f28ad5881873
+Transaction hash: 0xb726359683fc0d1bbf00892550d16b4e54f567af7b06ba2e9e3f7cccba7c370d
+Ephemeral private key: macisk.23e1c1ee433d15088f8cf256baa1e263e1f79cea937d50e6370b404bd6d5e004
+Transaction hash: 0x08c52eb3530fe7aeb6dae67e1a3e561e8c9355ef419dca497c6f44eeac1854df
+Ephemeral private key: macisk.144ee8b70115d625113d820bfbf6cac597e4584723e43221ae06b07c239dd2b
+Transaction hash: 0x55d8bc0b9c46e610297384ba7150023f7fcb7dd4f543127933d322a3b49a7a95
+Ephemeral private key: macisk.190727a2323501bf5af5ab55ffeace1602c532e3531965a9c970bbe7b7ad470f
+Transaction hash: 0xed0e64a96cd281dc0ab3198c3dac48080bc7475fc7c1b05ccce5f68c184dec0b
+Ephemeral private key: macisk.2e603529e1b883d9274efee4ad26739501e3424df598760a09f4ea4519ee52d3
+Transaction hash: 0x1da13c845c2bd7033579d2efcec70d7093fa04f18447f5a5882ba67fbec8fc50
+Ephemeral private key: macisk.1717f7d43ee1224913377f6757b8086c721961ceae13a614ec2db91a3e3f71db
+Transaction hash: 0x6856a76649d4be07d5d11b0666e3eff96e6acd63eb35ca49f116db3c899e185a
+Ephemeral private key: macisk.16c0572f5e06d0ab96c5a4efa577475a8368f1cbcf6c1a095a24bb0ddce1d2ec
+Transaction hash: 0x7aef5d25709749347a5e38337dc7c4bb437ea535237f4e8db3d470df020671c9
+Ephemeral private key: macisk.29a0de52994980320dcb659faa6179c16547284f6083dbaca0cd53c3b820b33
+Transaction hash: 0x03586d122d192fec561f7106067736fa543637a61f694f6789ff57e35965dadb
+Ephemeral private key: macisk.25f4885f250b865f3ed566dfdef60f4d515aaa0736453ca647b78788c9a26ff5
+Transaction hash: 0x8ada16a6602bca765ee8b4971df0c3593182305c011c4261dc35d019d365772f
+Ephemeral private key: macisk.463b954a3578f2a0ca01f369687793e9d62c7d96551f52eadda4f528f29ea9
+Transaction hash: 0xf06150399b85683a6a26cf5325b592be88e4c7d8b44e32a473eebcbcce4ae3e4
+Ephemeral private key: macisk.19a535a08113fe8dd6854a9e04dc85cab5d7a15a7c1684b9ee1908ccf373cf25
+Merging message subroots 1 / 4
+Executed mergeMaciStateAqSubRoots(); gas used: 360928
+Transaction hash: 0xeb917d5e25327e96469be565924c50b04d503d54dff594e22dd1e6d51f573923
+
+All message subtrees have been merged.
+Merging subroots to a main message root...
+Executed mergeMessageAq(); gas used: 71020
+Transaction hash: 0x67d8f9f78ccc3850a2a21f63c645bec705f7e7db88f81bdb1779e56167b4e5b7
+The message tree has been merged.
+Merging state subroots 1 / 1
+Executed mergeMaciStateAqSubRoots(); gas used: 616265
+Transaction hash: 0xf7941d7ae4b24ea8a47208094f39b76d68fa4c7c70f3d4dce21d8eba363c42ea
+
+All state subtrees have been merged.
+Merging subroots to a main state root...
+Executed mergeStateAq(); gas used: 1005142
+Transaction hash: 0x21601d4d1df21f360c8ca97af6c8fd1e9de15849ae7569361e018a20e27f9f66
+The state tree has been merged.
+fromBlock = 0
+Generating proofs of message processing...
+witnessGen: 477.075ms
+proofGen: 4.166s
+verifyProof: 966.649ms
+
+Progress: 1 / 3
+witnessGen: 376.616ms
+proofGen: 3.981s
+verifyProof: 860.816ms
+
+Progress: 2 / 3
+witnessGen: 425.157ms
+proofGen: 3.886s
+verifyProof: 904.596ms
+
+Progress: 3 / 3
+----------processMessages, 21.281 seconds, 3 proofs
+
+Generating proofs of vote tallying...
+witnessGen: 222.367ms
+proofGen: 1.557s
+verifyProof: 887.495ms
+
+Progress: 1 / 3
+witnessGen: 191.87ms
+proofGen: 1.733s
+verifyProof: 894.069ms
+
+Progress: 2 / 3
+witnessGen: 207.422ms
+proofGen: 1.541s
+verifyProof: 886.774ms
+
+Progress: 3 / 3
+
+OK
+----------tallyVotes, 9.827 seconds, 3 proofs
+Submitting proofs of message processing...
+Transaction hash: 0x1ef372aff11878ebf8dd84e7524540fc3cfb3826cca5735e2f572830cc85f3de
+totalBatches, 3, processMessagesBatchNum, 0,  txGasUsed, 435603
+Progress: 1 / 3
+Transaction hash: 0x34961ab51baa64b19a914088619cebac30658a7fae72b3eb01c7bd45377172c1
+totalBatches, 3, processMessagesBatchNum, 1,  txGasUsed, 373956
+Progress: 2 / 3
+Transaction hash: 0x2c5de02d9d4dae0ca663b70da0614006dc765aeac71a2185e31574b434f84267
+totalBatches, 3, processMessagesBatchNum, 2,  txGasUsed, 395528
+Progress: 3 / 3
+All message processing proofs have been submitted.
+
+Submitting proofs of vote tallying...
+Progress: 1 / 3
+Transaction hash: 0xbc8d0882a2beddc91d1ae5f046e1ee50bdda3fbb9c795903e711ace684164787
+totalBatches, 3, tallyBatchNum, 1, txGasUsed, 380538
+Progress: 2 / 3
+Transaction hash: 0x2043ca746637cf9993bb18bd5c2da1cde53633646468a4383a4e953d16757fc3
+totalBatches, 3, tallyBatchNum, 2, txGasUsed, 346338
+Progress: 3 / 3
+Transaction hash: 0x97e6fcf88e7f4f513ffc66676d1138971d188f3bd3ed3d44566d4347a6449892
+totalBatches, 3, tallyBatchNum, 3, txGasUsed, 346314
+All vote tallying proofs have been submitted.
+
+OK
+1450c85d7c414bc69d8f08719651332c3fe9d56e9bc49267772e7abdb29594b8
+-------------tally data -------------------
+{
+  provider: 'http://localhost:8545',
+  maci: '0x6FcF51825bBFC5cd8B60bc3d5D5e36E6c6F0E973',
+  pollId: 0,
+  newTallyCommitment: '0x1450c85d7c414bc69d8f08719651332c3fe9d56e9bc49267772e7abdb29594b8',
+  results: {
+    tally: [
+      '14', '0', '0', '0', '0', '0',
+      '0',  '0', '0', '0', '0', '0',
+      '0',  '0', '0', '0', '0', '0',
+      '0',  '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x1a639057eda89948b07bb0ceb2e1b3c8078d3ad6687b65711efeeaf500adcef8'
+  },
+  totalSpentVoiceCredits: {
+    spent: '14',
+    salt: '0x11e91ee5906948e975e276889cad052b18790c5410285adb82b1b43e4a17483b'
+  },
+  perVOSpentVoiceCredits: {
+    tally: [
+      '14', '0', '0', '0', '0', '0',
+      '0',  '0', '0', '0', '0', '0',
+      '0',  '0', '0', '0', '0', '0',
+      '0',  '0', '0', '0', '0', '0',
+      '0'
+    ],
+    salt: '0x1334cdc48eee4571895b9912a6fc435f90a73d30087a295fdc6bf32873ab97e3'
+  }
+}
+OK. finish verify

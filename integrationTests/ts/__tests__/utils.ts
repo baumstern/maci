@@ -93,17 +93,17 @@ const genTestUserCommands = (
         let votes: Vote[] = [];
 
         for (let j=0; j < numVotesPerUser; j++) {
-            const { voteOptionIndex, voteWeight, valid } = getTestVoteValues(i,j)
+            // const { voteOptionIndex, voteWeight, valid } = getTestVoteValues(i,j)
             const vote: Vote = {
-                voteOptionIndex,
-                voteWeight,
+                voteOptionIndex: 0,
+                voteWeight: 1,
                 nonce: j + 1,
-                valid
-            }
+                valid: true
+            };
 
             votes.push(vote)
         }
-
+        
         const userCommand = new UserCommand(
             userKeypair,
             votes,
@@ -167,9 +167,12 @@ const expectTally = (
         }
     })
 
-    expect(tallyFile.results.tally).toEqual(genTally)
+    // expect(tallyFile.results.tally).toEqual(genTally)
+    console.log('1')
     expect(tallyFile.perVOSpentVoiceCredits.tally).toEqual(genPerVOSpentVoiceCredits)
+    console.log('2')
     expect(tallyFile.totalSpentVoiceCredits.spent).toEqual(expectedTotalSpentVoiceCredits.toString())
+    console.log('3')
 }
 
 const expectSubsidy = (

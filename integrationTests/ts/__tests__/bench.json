@@ -1,0 +1,22 @@
+{
+    "suites": [
+        {
+            "name": "1user1vote",
+            "description": "Full tree, 4 batches, no bribers",
+            "numVotesPerUser": 5,
+            "numUsers": 0,
+            "expectedTally": [0],
+            "expectedSpentVoiceCredits": [0],
+            "expectedTotalSpentVoiceCredits": 1,
+            "votes": {
+                "0": {
+                    "0": { "voteOptionIndex": 0, "voteWeight": 1, "valid": true },
+                    "1": { "voteOptionIndex": 1, "voteWeight": 1, "valid": true },
+                    "2": { "voteOptionIndex": 2, "voteWeight": 1, "valid": true },
+                    "3": { "voteOptionIndex": 3, "voteWeight": 1, "valid": true },
+                    "4": { "voteOptionIndex": 4, "voteWeight": 1, "valid": true }
+                }
+            }
+        }
+    ]
+}

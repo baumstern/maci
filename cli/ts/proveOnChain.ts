@@ -401,6 +401,8 @@ const proveOnChain = async (args: any) => {
 
         console.log(`Transaction hash: ${tx.hash}`)
 
+        console.log(`totalBatches, ${totalMessageBatches}, processMessagesBatchNum, ${numBatchesProcessed + 1},  txGasUsed, ${receipt.gasUsed}`)
+
         // Wait for the node to catch up
         numBatchesProcessed = Number(await mpContract.numBatchesProcessed())
         let backOff = 1000
@@ -599,6 +601,7 @@ const proveOnChain = async (args: any) => {
 
         console.log(`Progress: ${tallyBatchNum + 1} / ${totalTallyBatches}`)
         console.log(`Transaction hash: ${tx.hash}`)
+        console.log(`totalBatches, ${totalTallyBatches}, tallyBatchNum, ${tallyBatchNum + 1}, txGasUsed, ${receipt.gasUsed}`)
 
         // Wait for the node to catch up
         tallyBatchNum = Number(await tallyContract.tallyBatchNum())

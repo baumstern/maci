@@ -148,3 +148,13 @@ cli/tallyinput.json
 
 # mdBook rendered files
 publish
+
+*user*vote
+sorted
+*.tar.gz
+total*
+
+
+logs*
+worker.sh
+sorted

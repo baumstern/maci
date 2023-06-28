@@ -21,6 +21,7 @@ import {
 } from './utils'
 import {readJSONFile} from 'maci-common'
 import {contractFilepath} from './config'
+import { SendGenProofRequestToCoordinatorService, PollingGetProofFromCoordinatorService } from './util_coordinatorService'
 
 const configureSubparser = (subparsers: any) => {
     const parser = subparsers.addParser(
@@ -381,12 +382,17 @@ const genProofs = async (args: any) => {
 
         let r
         try {
-            r = genProof(
-                circuitInputs,
-                rapidsnarkExe,
-                args.process_witnessgen,
-                args.process_zkey,
-            )
+            // genProof returns `JSON.parse` ed proof and publicInput
+            // r = genProof(
+            //     circuitInputs,
+            //     rapidsnarkExe,
+            //     args.process_witnessgen,
+            //     args.process_zkey,
+            // )
+        
+            await SendGenProofRequestToCoordinatorService("ProcessMessages", circuitInputs)
+            console.log("sent request to coordinator server to generate proof for processMessage circuit")
+            r = await PollingGetProofFromCoordinatorService("ProcessMessages")
         } catch (e) {
             console.error('Error: could not generate proof.')
             console.error(e)
@@ -493,12 +499,15 @@ const genProofs = async (args: any) => {
     let tallyCircuitInputs
     while (poll.hasUntalliedBallots()) {
         tallyCircuitInputs = poll.tallyVotes()
-        const r = genProof(
-            tallyCircuitInputs,
-            rapidsnarkExe,
-            args.tally_witnessgen,
-            args.tally_zkey,
-        )
+        // const r = genProof(
+        //     tallyCircuitInputs,
+        //     rapidsnarkExe,
+        //     args.tally_witnessgen,
+        //     args.tally_zkey,
+        // )
+        await SendGenProofRequestToCoordinatorService("TallyVotes", tallyCircuitInputs)
+        console.log("sent request to coordinator server to generate proof for TallyVotes circuit")
+        const r = await PollingGetProofFromCoordinatorService("TallyVotes")
 
         // Verify the proof
         const isValid = verifyProof(

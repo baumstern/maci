@@ -193,11 +193,6 @@ const genProofs = async (args: any) => {
     const tallyDatFile =  args.tally_witnessgen + ".dat"
 
     const [ok, path] = isPathExist([
-        rapidsnarkExe,
-        args.process_witnessgen,
-        args.tally_witnessgen,
-        processDatFile,
-        tallyDatFile,
         args.process_zkey,
         args.tally_zkey,
         ])

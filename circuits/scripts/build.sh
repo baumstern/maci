@@ -10,12 +10,12 @@ for circuit in "$CIRCUITS_PATH"/*.circom
 do  
     # Compile circuit
     echo "#### Compile Circuit: "$circuit""
-    circom --O0 --wasm --r1cs --c --sym --output "$OUTPUT_PATH" "$circuit"
+    /Users/daehyun/.cargo/bin/circom --O0 --wasm --r1cs --c --sym --output "$OUTPUT_PATH" "$circuit"
 
     # Generate executable that can compute the witness of this circuit
-    filename=$(basename "$circuit" .circom)
-    cd ""$OUTPUT_PATH""$filename"_cpp"
-    make
+    # filename=$(basename "$circuit" .circom)
+    # cd ""$OUTPUT_PATH""$filename"_cpp"
+    # make
 
     cd "$CWD"
 done

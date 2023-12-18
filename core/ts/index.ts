@@ -31,3 +31,5 @@ export {
   MESSAGE_TREE_ARITY,
   VOTE_OPTION_TREE_ARITY,
 } from "./utils/constants";
+
+export { TestHarness } from "./__tests__/utils/MaciTestHarness";

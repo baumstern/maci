@@ -1,7 +1,9 @@
 import { Signature } from "maci-crypto";
 import { PCommand, Message, Keypair, PubKey } from "maci-domainobjs";
 
-import { STATE_TREE_DEPTH, MaciState, Poll } from "../..";
+import { MaciState } from "../../MaciState";
+import { Poll } from "../../Poll";
+import { STATE_TREE_DEPTH } from "../../utils/constants";
 
 const voiceCreditBalance = BigInt(100);
 const duration = 30;
@@ -23,10 +25,15 @@ const messageBatchSize = 25;
  */
 export class TestHarness {
   maciState = new MaciState(STATE_TREE_DEPTH);
+
   coordinatorKeypair = new Keypair();
+
   poll: Poll;
+
   pollId: number;
+
   users: Keypair[] = [];
+
   stateIndices = new Map<Keypair, number>();
 
   /**
@@ -34,7 +41,6 @@ export class TestHarness {
    */
   constructor() {
     this.pollId = this.maciState.deployPoll(
-      duration,
       BigInt(Math.floor(Date.now() / 1000) + duration),
       maxValues,
       treeDepths,
@@ -50,7 +56,7 @@ export class TestHarness {
    * @returns The keypairs of the newly created users.
    */
   createUsers = (numUsers: number): Keypair[] => {
-    for (let i = 0; i < numUsers; i++) {
+    for (let i = 0; i < numUsers; i += 1) {
       const user = new Keypair();
       this.users.push(user);
       const stateIndex = this.signup(user);
@@ -150,6 +156,10 @@ export class TestHarness {
    * @returns The state index of the user.
    */
   getStateIndex = (user: Keypair): number => {
-    return this.stateIndices.get(user);
+    if (this.stateIndices.has(user)) {
+      return Number(this.stateIndices.get(user));
+    }
+    // if the user is not signed up, return -1
+    return -1;
   };
 }

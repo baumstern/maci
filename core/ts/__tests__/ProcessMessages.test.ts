@@ -1,12 +1,13 @@
-import { AssertionError } from "assert";
 import { expect } from "chai";
-
 import { Keypair } from "maci-domainobjs";
 
+import { AssertionError } from "assert";
+
 import { Poll } from "..";
+
 import { TestHarness } from "./utils/MaciTestHarness";
 
-describe("Poll message processing and validation", function () {
+describe("Poll message processing and validation", function test() {
   // set timeout to 30 seconds
   this.timeout(30000);
 
@@ -14,13 +15,13 @@ describe("Poll message processing and validation", function () {
   let poll: Poll;
 
   describe("Sanity checks", () => {
-    beforeEach(async () => {
+    beforeEach(() => {
       testHarness = new TestHarness();
 
       poll = testHarness.poll;
     });
 
-    it("processMessages() should process a valid message", async () => {
+    it("processMessages() should process a valid message", () => {
       const voteOptionIndex = BigInt(0);
       const voteWeight = BigInt(9);
       const nonce = BigInt(1);
@@ -38,7 +39,7 @@ describe("Poll message processing and validation", function () {
       expect(tallyResult).to.eq(expectedTallyResult);
     });
 
-    it("processMessages() should not process messages twice", async () => {
+    it("processMessages() should not process messages twice", () => {
       const voteOptionIndex = BigInt(0);
       const voteWeight = BigInt(9);
       const nonce = BigInt(1);
@@ -62,20 +63,20 @@ describe("Poll message processing and validation", function () {
       expect(tallyResult).to.eq(expectedTallyResult);
     });
 
-    it("processMessages() should not process a message with an incorrect nonce", async () => {
+    it("processMessages() should not process a message with an incorrect nonce", () => {
       const voteOptionIndex = BigInt(0);
       const voteWeight = BigInt(9);
 
       const users = testHarness.createUsers(5);
       // generate a bunch of invalid votes with nonces that are not 1
-      let nonce: bigint;
-      for (let i = 0; i < users.length; i++) {
+      users.forEach((user) => {
+        let nonce: bigint;
         do {
           nonce = BigInt(Math.floor(Math.random() * 100) - 50);
         } while (nonce === BigInt(1));
 
-        testHarness.vote(users[i], testHarness.getStateIndex(users[i]), voteOptionIndex, voteWeight, nonce);
-      }
+        testHarness.vote(user, testHarness.getStateIndex(user), voteOptionIndex, voteWeight, nonce);
+      });
 
       testHarness.finalizePoll();
 
@@ -92,21 +93,21 @@ describe("Poll message processing and validation", function () {
     // the square of the vote weight. Since the maximum voice credit is 100 here,
     // the vote weight can only be a value between 1 and 10
     // (as these are the square roots of numbers up to 100).
-    it("processMessages() should not process a message with an incorrect vote weight", async () => {
+    it("processMessages() should not process a message with an incorrect vote weight", () => {
       const voteOptionIndex = BigInt(0);
       const nonce = BigInt(1);
 
       const users = testHarness.createUsers(5);
 
       // generate a bunch of invalid votes with vote weights that are not between 1 and 10
-      let voteWeight: bigint;
-      for (let i = 0; i < users.length; i++) {
+      users.forEach((user) => {
+        let voteWeight: bigint;
         do {
           voteWeight = BigInt(Math.floor(Math.random() * 100) - 50);
         } while (BigInt(1) <= voteWeight && voteWeight <= BigInt(10));
 
-        testHarness.vote(users[i], testHarness.getStateIndex(users[i]), voteOptionIndex, voteWeight, nonce);
-      }
+        testHarness.vote(user, testHarness.getStateIndex(user), voteOptionIndex, voteWeight, nonce);
+      });
 
       testHarness.finalizePoll();
 
@@ -119,7 +120,7 @@ describe("Poll message processing and validation", function () {
       expect(tallyResult).to.eq(expectedTallyResult);
     });
 
-    it("processMessages() should not process a message with an incorrect state tree index", async () => {
+    it("processMessages() should not process a message with an incorrect state tree index", () => {
       const voteOptionIndex = BigInt(0);
       const nonce = BigInt(1);
       const voteWeight = BigInt(9);
@@ -127,10 +128,10 @@ describe("Poll message processing and validation", function () {
 
       const users = testHarness.createUsers(5);
 
-      for (let i = 0; i < users.length; i++) {
+      users.forEach((user) => {
         // generate a bunch of invalid votes with incorrect state tree index
-        testHarness.vote(users[i], testHarness.getStateIndex(users[i]) + 1, voteOptionIndex, voteWeight, nonce);
-      }
+        testHarness.vote(user, testHarness.getStateIndex(user) + 1, voteOptionIndex, voteWeight, nonce);
+      });
 
       testHarness.finalizePoll();
 
@@ -143,7 +144,7 @@ describe("Poll message processing and validation", function () {
       expect(tallyResult).to.eq(expectedTallyResult);
     });
 
-    it("processMessages() should not process a message with an incorrect signature", async () => {
+    it("processMessages() should not process a message with an incorrect signature", () => {
       const voteOptionIndex = BigInt(0);
       const voteWeight = BigInt(9);
       const nonce = BigInt(1);
@@ -186,7 +187,7 @@ describe("Poll message processing and validation", function () {
       expect(tallyResult).to.eq(expectedTallyResult);
     });
 
-    it("processMessages() should not process a message with an invalid coordinator key", async () => {
+    it("processMessages() should not process a message with an invalid coordinator key", () => {
       const voteOptionIndex = BigInt(0);
       const voteWeight = BigInt(9);
       const nonce = BigInt(1);

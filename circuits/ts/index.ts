@@ -27,6 +27,11 @@ const genProof = (
     const proofJsonPath = path.join(tmpDirPath, 'proof.json')
     const publicJsonPath = path.join(tmpDirPath, 'public.json')
 
+    fs.writeFileSync(
+        path.join(tmpDirPath, 'circuit.info'),
+        zkeyPath,
+    )
+
     // Write input.json
     const jsonData = JSON.stringify(stringifyBigInts(inputs))
     fs.writeFileSync(inputJsonPath, jsonData)
@@ -65,17 +70,17 @@ const genProof = (
     const proof = JSON.parse(fs.readFileSync(proofJsonPath).toString())
     const publicInputs = JSON.parse(fs.readFileSync(publicJsonPath).toString())
 
-    for (const f of [
-        proofJsonPath,
-        publicJsonPath,
-        inputJsonPath,
-        outputWtnsPath,
-    ]) {
-        if (fs.existsSync(f)) {
-            fs.unlinkSync(f)
-        }
-    }
-    tmpObj.removeCallback()
+    // for (const f of [
+    //     proofJsonPath,
+    //     publicJsonPath,
+    //     inputJsonPath,
+    //     outputWtnsPath,
+    // ]) {
+    //     if (fs.existsSync(f)) {
+    //         fs.unlinkSync(f)
+    //     }
+    // }
+    // tmpObj.removeCallback()
 
     return { proof, publicInputs }
 }
@@ -118,10 +123,10 @@ const verifyProof = (
     //const calldataCmd = `node ${snarkjsPath} zkesc ${publicJsonPath} ${proofJsonPath}`
     //console.log(shelljs.exec(calldataCmd).stdout)
 
-    fs.unlinkSync(proofJsonPath)
-    fs.unlinkSync(publicJsonPath)
-    fs.unlinkSync(vkJsonPath)
-    tmpObj.removeCallback()
+    // fs.unlinkSync(proofJsonPath)
+    // fs.unlinkSync(publicJsonPath)
+    // fs.unlinkSync(vkJsonPath)
+    // tmpObj.removeCallback()
 
     return isValid
 }

@@ -278,6 +278,19 @@ const proveOnChain = async (args: any) => {
         console.log('Submitting proofs of message processing...')
     }
 
+    // here
+    const { proof, circuitInputs, publicInputs } = data.processProofs[0]
+    const formattedProof = formatProofForVerifierContract(proof)
+    publicInputs[0].toString()
+
+    const isValidOnChain = await verifierContract.verify(
+        formattedProof,
+        onChainProcessVk,
+        publicInputs[0].toString(),
+    )
+
+    console.log('isValidOnChain: ', isValidOnChain)
+
     for (let i = numBatchesProcessed; i < totalMessageBatches; i ++) {
         //const currentMessageBatchIndex = Number(await pptContract.currentMessageBatchIndex())
         let currentMessageBatchIndex
@@ -374,6 +387,12 @@ const proveOnChain = async (args: any) => {
             onChainProcessVk,
             publicInputHashOnChain.toString(),
         )
+
+        console.log("formattedPrrof: ", formattedProof)
+        console.log("onChainProcessVk: ", JSON.stringify(onChainProcessVk))
+        console.log("publicInputHashOnChain: ", publicInputHashOnChain.toString())
+
+        console.log(`Verify tx hash: ${isValidOnChain.hash}`)
 
         if (!isValidOnChain) {
             console.error('Error: the verifier contract found the proof invalid.')
